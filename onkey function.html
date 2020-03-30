@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up Form</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+  <!--Styling-->
+<style type="text/css">
+		
+  body {
+  	font-family: sans-serif;
+  	font-size: 10px;
+    background-color: #6b838d;
+  }
+
+  form {
+  	background: #fff;
+  	padding: 4em 4em 2em;
+  	max-width:300px;
+  	margin:30px auto 0;
+  	border-radius:10px;
+  }
+  
+  h2 {
+  	margin:-55px 0 20px 0;
+  	padding:10px;
+  	text-align:center;
+  	font-size:25px;
+  	color: #265c72;
+  }
+  
+  h4 {
+    margin:-30px 0 50px 0;
+    padding:10px;
+    text-align:center;
+    font-size:25px;
+  }
+
+  input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    outline: none;
+    margin-top:-35px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    border: 1px solid #607d8b;
+    font-size: 1.6em;
+    padding: .8em .5em;
+    border-radius: 2px;
+  }
+ 
+  button {
+	background-color:#2c728f;
+    width:190px;
+    height:38px;
+    border-radius: 2px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size:23px;
+  }
+
+  button:hover {
+    background:#265c72;
+  }
+  
+</style>
+</head>
+
+<body><br><br>
+	<form><br><br>
+		<h2>Accelerator Program</h2>
+  		<h4 style="font-family:TimesNewRoman">Sign Up!!</h4>
+		
+			 <input name="Username" type="text"placeholder="Full name" style="font-size:18px"><br><br><br>
+			 <input name="Email" type="text"placeholder="Email" style="font-size:18px"><br><br><br>
+             <input id="password"name="password" type="password"placeholder="Password"style="font-size:18px"><br><br><br>
+            
+           <input id="confirm_password" name="confirm_password" type="password" placeholder="Confirm Password"style="font-size:18px" onkeyup="myFunction2()"><br><br>
+			 <center><button onclick="myFunction()">Submit</button></center>
+
+	</form>
+
+ 
+  
+
+</body>
+<script type="text/javascript">
+
+
+
+
+
+
+  //Declaring and assigning the user's input
+    var password=document.getElementById('password');
+    var confirm_password=document.getElementById('confirm_password');
+    
+
+  //Conditional statements for verifying the two passwords after the submit button is clicked
+        function myFunction(){
+          
+    if(password.value=="" && confirm_password.value==""){
+      alert("Please enter password");
+    }
+    else if(confirm_password.value==""){
+      alert("Please retype password");
+    }
+    else if(password.value==confirm_password.value){
+      alert("Your passwords match,thanks for signing up");
+    }
+    else if(!(password.value==confirm_password.value)){
+      alert("Your passwords do not match,kindly check");
+    }
+      alert("Invalid Input,try again");
+    }
+  }
+
+  function myFunction2(){
+    if(password.value==confirm_password.value){
+        alert("Password match.");
+    }
+
+    else(!(password.value==confirm_password.value)){
+        alert("Kindly type the correct password");
+    }
+  }
+
+  </script>
+</html>
+
+    © 2020 GitHub, Inc.
+    Terms
+    Privacy
+    Security
+    Status
+    Help
+
+    Contact GitHub
+    Pricing
+    API
+    Training
+    Blog
+    About
