@@ -5,30 +5,48 @@
 	<meta charset="utf-8"><!-- Encoding-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	
-	</head>
-<style>
-background:pink;
-}
-</style>
-
-
-<body>
-
 <style>
 
 body{
+background-image:url("2.jpg");
+	background-position:center;
+	background-repeat:no-repeat;
+	background-size:cover;
+	width:100%;
+}
 
 
+form{
+margin-top:200px}
+
+input{
+height:30px;}
 
 </style>
+
+</head>
+
+<body>
+
+
+
+<center><form name=myform>
+
+        Enter the radius of circle:
+		<br><br>
+       <input type="text" name="inputBox" size=20>
+       <br><br>
+       <input type="button" value="Calculate" onClick='CalculateArea();' id="myInput">  
+	   
+    </form></center>
+
+
 
 <script> 
 
 
 
 // create a class to calculate the radius of a circle and alert the results
-
 
 
 
@@ -45,43 +63,27 @@ get area() {
 return this.calcradius();
 }
 
+
 //method
 
-var myAns= prompt("Enter the radius of the circle","");
+var myRadius=document.getElementById('myInput');
 
-if(value.length == 0 ) {
+CalculateArea(){
+if(myRadius == 0 ) {
 alert("value must be greater than 0");
 }
-else if(value < 0 ) {
+else if(myRadius < 0 ) {
 alert("value must not be a negative number");
 
 }
 
-else{
-alert("Your value is" + " ");
-}
-
-
 calcradius() {
 return this.pi / this.radius * 2;
 }
-
-
 }
 
-let round =  new Circle(7, 2);
- alert(round.area);
-
-
-
-
-
-
-
-
-// Create a class to calculate the area of a circle, and alert the results. 
-
- // Take the content of the radius from a user.
+let round =  new Circle(3.14, " ");
+alert(round.area);
 
 
 
