@@ -5,42 +5,9 @@
 	<meta charset="utf-8"><!-- Encoding-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<style>
-
-body{
-background-image:url("2.jpg");
-	background-position:center;
-	background-repeat:no-repeat;
-	background-size:cover;
-	width:100%;
-}
-
-
-form{
-margin-top:200px}
-
-input{
-height:30px;}
-
-</style>
-
 </head>
 
 <body>
-
-
-
-<center><form name=myform>
-
-        Enter the radius of circle:
-		<br><br>
-       <input type="text" name="inputBox" size=20>
-       <br><br>
-       <input type="button" value="Calculate" onClick='CalculateArea();' id="myInput">  
-	   
-    </form></center>
-
-
 
 <script> 
 
@@ -51,42 +18,28 @@ height:30px;}
 
 
 
-class Circle {
-constructor(pi, radius) {
+
+class Area {
+constructor( pi, radius) {
 this.pi = pi;
 this.radius = radius;
 }
 
 //getter
 
-get area() {
+get shape() {
 return this.calcradius();
 }
 
-
 //method
 
-var myRadius=document.getElementById('myInput');
-
-CalculateArea(){
-
 calcradius() {
-return this.pi / this.radius * 2;
+return this.pi / this.radius;
 }
 }
 
-let round =  new Circle(3.14, " ");
-alert(round.area);
-
-
-
-
-
-
-
-
-
-
+let circle =  new Area(3.14,2);
+ alert(circle.shape);
 
 
 </script>
