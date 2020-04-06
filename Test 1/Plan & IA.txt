@@ -1,0 +1,47 @@
+Plan:
+An application to manage all the elements of a schools's administration and management activities, including students courses, exams,fees 
+emplyees and attendance.
+
+IA:
+
+Content-
+What type of information are we dealing with?
+It is a school management system that aids in performing school administrative tasks and contains features that help to avoid 
+manual paper work and also helps in keeping track of students results and activites.
+
+Relevance;
+-It helps students obtain data
+-It helps students access conveniently their relevant information	
+-It helps keep information in a secure place
+
+
+Context-
+Where is the user seeking this application?
+-On a web application.
+
+Where - On a website
+How - By accessing it on a mobile or laptop and going to the link provided
+Why - It's convenient
+
+
+
+User-
+Who is consuming this content?
+-teachers
+-Students
+-Administration
+
+
+
+What does it mean to them?What value does it provide?
+
+-It helps students access their end of year eports ans students information
+- It It help parents keep track of their ward's progress
+- It helps generate and grade students and their performance
+
+
+What pre-existing expectations do they have?
+-online payments
+-Report cards
+-Notifications
+-Atrractive Interface

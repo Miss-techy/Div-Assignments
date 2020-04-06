@@ -1,0 +1,155 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Form</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+body{
+background:gray;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 350px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 5px;
+ 
+}
+
+.wrapper h2{
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #332902;
+}
+
+.wrapper .input_field{
+  margin-bottom: 10px;
+}
+
+.wrapper .input_field{
+  border: 1px solid #e0e0e0;
+  width: 100%;
+  padding: 10px;
+}
+
+.wrapper textarea{
+  resize: none;
+  height: 80px;
+}
+
+.wrapper button{
+  border: 0px;
+  margin-top: 15px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  background: #fece0c;
+  color: #332902;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+#error_message{
+  margin-bottom: 20px;
+  background: #fe8b8e;
+  padding: 0px;
+  text-align: center;
+  font-size: 14px;
+  transition: all 0.5s ease;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="wrapper">
+  <h2>FILL THIS FORM</h2>
+  
+  <form action="" id="myform" onclick="validate();">
+    <div class="input_field">
+        <input type="text" placeholder="Name" id="name" required>
+    </div>
+    <div class="input_field">
+        <input type="text" placeholder="Phone" id="phone" required>
+    </div>
+    <div class="input_field">
+        <input type="text" placeholder="Email" id="email" required>
+    </div>
+    <div class="input_field">
+        <input type="password" placeholder="Password" id="password" required>
+    </div>
+	<div class="input_field">
+        <input type="password" placeholder="Confirm Password" id="confirm_password" required>
+    </div>
+    <button type="button">Submit</button>
+    </div>
+  </form>
+</div>
+
+<script> 
+
+
+
+function validate(){
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var email = document.getElementById("email").value;
+  var message = document.getElementById("password").value;
+   var message = document.getElementById("confirm_password").value;
+ 
+  if(name.length < 5){
+    alert("Enter Full name");
+  }
+  else if(isNaN(phone) || phone.length != 10){
+    alert("Your Phone Number is Invalid");
+  }
+  else if(email.indexOf("@") == -1 || email.length < 6){
+   alert("Enter correct email");
+  }
+  else if(password.length <= 7){
+    alert("Enter more than 8 characters");
+  }
+  else if(!(password.value==confirm_password.value)){
+      alert("Your Passwords do not match");
+    }
+  else{
+  alert("Form Submitted Successfully!");
+ 
+}
+
+}
+
+
+
+ 
+</script>
+
+
+
+
+
+</body>
+</html>
