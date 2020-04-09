@@ -1,0 +1,103 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Title</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+
+<script> 
+
+// syntax for array
+
+//var x = [array1, array2, array3];
+
+
+
+//Which of these will you prefer and why; var points = new Array;  var points = [];
+
+//The latter: var points =[]; . The former has no use and complicates your codes. The latter is simpler and straight forward.
+
+
+
+//What number does Array indexes start?
+
+0
+
+
+
+// Create an Array of 4 elements, and access each element in that.
+
+//var arrayNames = ["Kevin", "Lettie", "Han", "Dom"];
+
+//accessing each of the elements
+
+//document.write (arrayNames[0]);
+//document.write (arrayNames[1]);
+//document.write (arrayNames[2]);
+//document.write (arrayNames[3]);
+
+
+
+
+// Which of these use numbers to access their elements? Ans- Arrays
+
+
+// Which of these use names to access their elements? Ans- Objects
+
+
+
+
+
+// Question 7
+
+
+var language = ["DART", "PHP", "JAVASCRIPT", "PYTHON"];
+
+//add three more elements to the Array
+
+language = language.concat(["JAVA", "VUE.JS", "CSS"]) ;
+document.write("<br />Adding three more items: " + language + "<br />");                                 
+
+
+
+
+// Access the last element of the Array language
+var lastElement = language[language.length-1];
+document.write("<br />The last element of the Array is " + lastElement + "<br />");
+
+
+//Replace the last element with the first element
+language.reverse();
+document.write ("<br />The reverse order of the Array is " + language+ "<br />");
+
+
+//How to know if the language variable is an array
+document.write( language instanceof Array);
+
+
+
+//Loop through the array and display the results in the array
+var i;
+for(var i=0; i < language.length; i++){
+
+alert(language[i]);
+}
+
+
+
+</script>
+
+<body>
+
+
+
+</body>
+</html>
+
