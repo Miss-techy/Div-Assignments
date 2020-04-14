@@ -14,7 +14,7 @@
 <body>
 
 <script> 
-
+/*
 var numbers = [1,2,3,4];
 var totalAmount = 0;
 
@@ -25,6 +25,26 @@ for (var x = 0; x < numbers.length; x++) {
 }
 
 alert("The total is " + totalAmount); 
+*/
+	
+	
+alert("Add 3 items");
+num1 = prompt("Enter first number");
+num2 = prompt("Enter second number");
+num3 = prompt("Enter third number");
+
+var addition = [];   //an empty array
+addition.push(num1);    // push the number two
+addition.push(num2);    // pushing the number 3
+addition.push(num3);
+
+var total = 0;   //creating an array to sum up the values
+for (var i =0; i < addition.length; i++)
+{
+total += addition[i];
+}
+
+alert(total);
 
 
 
