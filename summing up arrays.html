@@ -52,16 +52,15 @@ alert(total);
 
 var grade = [];
 
-var n = prompt("Enter a number");
-for(var n =1; n >=1 ; n++)
+var alertMe = prompt("Enter a number");    // the user gets to input the number of grades he wants to enter
+for(var i =1; i <=alertMe ; i++)			// loop the number of times the user entered the number
 {
 
-var z = prompt("Enter new grades");
+var z = prompt("Enter new grades");    // the user enters actual grades
 grade.push(z);
 }
 
-
-var summ = 0;
+var summ = 0;							//calculation of grades start
 for(var w = 0; w < grade.length; w++)
 {
 sum += +grade[w];
@@ -72,6 +71,17 @@ gpa = sum / 6.0;    //sum divided by number of credit hours
 alert(sum);
 alert(gpa);
 
+//Linked List
+
+// A linked list is a data structure where elements are stored in a node
+// The node contains two pieces of information: the element itself and the refernce to the next node. An arrow points to the next node.
+// Arrays have fixed size but linked list have dynamic size
+// Arrays may result in memory waste but theres's no memory waste with linked lists
+// There are three common types of Linked List.
+//Singly Linked List.
+//Doubly Linked List.
+//Circular Linked List.
+//Linked lists are often used because of their efficient insertion and deletion.
 
 </script>
 
