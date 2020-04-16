@@ -17,7 +17,7 @@
 
 
 <script> 
-
+/*
 var circumference = prompt("Enter circumference");
 
 class Circle{
@@ -36,6 +36,33 @@ return "Your answer is " + this.circumference / this.pi * 2;
 radius = new Circle(circumference, 3.14);
 
 document.getElementById("element").innerHTML = radius.method();
+
+*/
+
+//Area of a cylinder
+
+// Formula: A =2πrh + 2πrxr
+
+
+var radius = prompt("Enter radius");
+var height = prompt("Enter height");
+
+
+class Cylinder{
+constructor(pi, radius, height){
+this.pi = pi;
+this.radius = radius;
+this.height = height;
+}
+
+method() {
+return "The answer is " + 2 * this.pi * this.radius * this.height + 2 * this.pi * this.radius * this.radius;
+}
+}
+
+
+area = new Cylinder(3.14, radius, height);
+document.getElementById("element").innerHTML = area.method();
 
 
 
