@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Title</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<p id="element"></p>
+
+
+<script> 
+
+var circumference = prompt("Enter circumference").value;
+
+class Circle{
+constructor(circumference, pi) {
+this.circumference = circumference;
+this.pi = pi;
+
+}
+
+method() {
+return "Your answer is " + this.cicumference / this.pi * 2;
+
+}
+}
+
+radius = new Circle(circumference, 3.14);
+
+document.getElementById("element").innerHTML = radius.method();
+
+
+
+</script>
+
+
+</body>
+</html>
+
