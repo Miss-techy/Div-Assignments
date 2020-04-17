@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Classes</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<script> 
+
+
+//Create a class that accepts two parameters and perform the following
+//on these parameters
+
+
+var num1 = prompt("Enter first number");
+var num2 = prompt("Enter second number");
+class addMe{
+	constructor(num1, num2){
+		this.num1 = num1;
+		this.num2 = num2;
+	}
+
+	method(num1, num2){
+		return "Your answer is " + this.num1 * this.num2;
+    }
+    method2(num1, num2){
+return "Your answer is " +  this.num1 / this.num2;
+}
+method3(num1, num2){
+return "Your answer is " +  this.num1 + this.num2;
+}
+method4(num1, num2){
+return "Your answer is " +  this.num1 - this.num2;
+}
+
+}
+
+add = new addMe(num1, num2);
+alert(add.method());
+alert(add.method2());
+alert(add.method3());
+alert(add.method4());
+</script>
+
+
+</body>
+</html>
+

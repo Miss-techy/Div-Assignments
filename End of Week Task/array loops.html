@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Arrays</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+    <p id="demo"></p>
+
+<script> 
+
+//Loop through the object below to get the score of each language, and display it 
+//in a list format.Onclick of each score, alert the language associated with it.
+
+
+
+var languages; //array
+var list;  // for opening and closing the ordered list
+var index; 	//for loop index
+
+var languages = {JAVA: "77", 
+JAVASCRIPT: "65",
+ PYTHON: "86"};
+
+list = "<ol>";
+for (index = 0; index < languages.length; index++){
+	list = list + "<li onclick= "myLang()">" + languages[index] + "</li>";
+}
+list = list +  "</ol>";
+
+document.getElementById("demo").innerHTML = list;
+
+
+
+</script>
+
+
+</body>
+</html>
+

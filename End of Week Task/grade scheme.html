@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Grade Scheme</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+img{
+
+	height:20%;
+}
+
+button{
+padding:12px 30px;
+
+border-radius:30px;
+background:darkorange;
+color:#fff;
+border:1px solid darkorange;
+cursor:pointer;
+}
+
+
+#below-icon-sec .btn-default:hover{
+	background:orange;
+}
+
+</style>
+
+</head>
+
+<body>
+ 
+<center><img src="studying.svg"/></center>
+<center><button onclick="myFunction()">Click Me To Know Your Score</button></center>
+
+
+
+
+<script> 
+
+
+function myFunction() {
+
+a=prompt("Enter first subject mark");
+b= prompt("Enter second subject mark");
+sum = eval(a) + eval(b);
+document.write("The sum is "+sum+" <br>");
+avg = sum / 3;
+document.write("The percentage is "+avg+" <br>");
+if(avg >= 81)
+{ 
+document.write("GRADE A!");
+}
+if(avg >= 70)
+{ 
+document.write("GRADE B!");
+}
+
+if(avg >= 69)
+{ 
+document.write("GRADE C!");
+}
+
+if(avg <= 49)
+{ 
+document.write("GRADE F!");
+}
+
+}
+</script>
+
+
+</body>
+</html>
+

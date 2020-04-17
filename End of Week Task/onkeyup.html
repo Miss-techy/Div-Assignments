@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>JS Events</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+    body{
+        background-color: aqua;
+    }
+    .wrapper{
+        margin-top: 15%;
+    }
+
+    input{
+height:40px;
+width:50%;
+padding:10px;
+border-radius:30px;
+border:1px solid rgba(0,0,0,0.3);
+    }
+</style>
+
+</head>
+
+<body>
+    <div class="wrapper">
+    <h1 id="myName" style="text-align: center;"></h1>
+    <center><input type="text"  placeholder="Enter Last Name" onkeyup="myBtn()" id="lastname"/></center> <br>
+    <center><input type="text"  placeholder="Confirm Last Name" id="confirmLastName" onkeyup="myBtn()"/></center>
+</div>
+<script> 
+//Check if two input fields match using the onkeyup event
+
+
+var myName = prompt("What's Your Name?");
+document.getElementById("myName").innerHTML = "Hi " + myName + "," +
+" Enter Your Last Name and confirm it";
+
+function myBtn(){
+ var lastName = document.getElementById("lastname").value;
+ var confirmLastName = document.getElementById("confirmLastName").value;
+
+	if(lastName == confirmLastName){
+		 alert("Great. Thank You");
+	 }
+	 else{
+		 alert("Try Again");
+	 }
+ }
+
+
+</script>
+
+
+</body>
+</html>
+
