@@ -62,9 +62,18 @@ if(x < 4){
 else{
 	for (var i =1; i <= x; i++){
 		var inputLang = prompt("Enter preferred languages");
-		if(inputLang !== arrayProgramme){
-			alert("Invalid input. Try again");
+		function findCommonElement(inputLang, arrayProgramme) {
+
+			 for(let i = 0; i < inputLang; i++) { 
+
+			 	for(let j = 0; j < arrayProgramme; j++) {
+
+			 		if(!(inputLang[i] === arrayProgramme[j])) { 
+
+			 			 alert("Invalid");
 		}
+	}
+}		
 		else{
 			inputLang.push(studentArray);
 		}
