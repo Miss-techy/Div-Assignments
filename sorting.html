@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<p id="someText"></p>
+
+<script>
+
+var element;
+var x = prompt("How many grades?");
+if(x < 8){
+		alert("Enter 8 or more")
+	}
+	else{
+		element = "<ul>";
+for(i= 1; i <= x; i++){
+	var inputMe = prompt("Enter grade");
+	element += ("<li>" + inputMe + "</li>")
+	 
+}
+element += "</ul>";
+	document.getElementById('someText').innerHTML = element;
+
+var sortedByGrade = inputMe.sort(function(a, b){
+    if(a > b) return 1;
+    if(a < b) return -1;
+    return 0;
+	});
+
+}
+
+if(inputMe >= 81 && inputMe <= 100)
+{ 
+document.write("GRADE A!");
+}
+else if(inputMe >= 70 && inputMe <= 80)
+{ 
+document.write("GRADE B!");
+}
+
+else if(inputMe >= 50 && inputMe <= 69)
+{ 
+document.write("GRADE C!");
+}
+
+else{ 
+document.write("GRADE F!");
+}
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
