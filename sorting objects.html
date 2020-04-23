@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+<script>
+	
+/*
+Create an Array of user objects, where each object contains five properties:
+
+name, email, phone, age, dateJoined
+
+ 
+
+Use the following properties to sort the user object:
+
+
+	
+numeric property
+	string property
+	Date property
+	*/
+
+
+var myUser = [
+{name:'Sue', email:"sue@gmail.com", phone:"0307903293", age:"40", dateJoined:"19th June, 2020"},
+
+{name:'Gran', email:"gran@gmail.com", phone:"0507303293", age:"60", dateJoined:"21st June, 2020"},
+
+{name:'Emily', email:"emily@gmail.com", phone:"0207905693", age:"10", dateJoined:"8th October, 2020"},
+
+{name:'Emma', email:"emma@gmail.com", phone:"0547678293", age:"20", dateJoined:"1st June, 2020"},
+
+];
+
+
+//numeric property
+
+//sort by phone 
+
+myUser.sort(function (a, b) {
+ if (a.phone > b.phone)
+ return 1;
+ if (a.phone < b.phone)
+ return -1;
+ return 0;
+});
+ 
+console.table(myUser);
+
+
+//sort by age
+
+myUser.sort(function (a, b) {
+ if (a.age > b.age)
+ return 1;
+ if (a.age < b.age)
+ return -1;
+ return 0;
+});
+
+console.table(myUser);
+
+
+
+
+
+
+
+//string property
+
+//name
+myUser.sort(function (x, y) {
+let a = x.name.toUpperCase(),
+b = y.name.toUpperCase();
+if (a > b)
+return 1;
+if (a < b)
+return -1;
+return 0;
+});
+ 
+console.table(myUser);
+
+
+
+//email
+myUser.sort(function (x, y) {
+let a = x.email.toUpperCase(),
+b = y.email.toUpperCase();
+if (a > b)
+return 1;
+if (a < b)
+return -1;
+return 0;
+});
+ 
+console.table(myUser);
+
+
+
+
+
+
+
+//date property
+
+ 
+// sort by date
+myUser.sort(function (x, y) {
+let a = new Date(x.dateJoined),
+        b = new Date(y.dateJoined);
+    return a - b;
+});
+ 
+console.table(myUser);
+
+
+
+
+
+</script>
+</body>
+</html>
