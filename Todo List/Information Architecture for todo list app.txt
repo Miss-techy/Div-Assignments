@@ -1,0 +1,45 @@
+Information Architecture for a To-do List.
+
+
+Plan:
+An application to help user stay organized and manage their day-to day activities
+IA:
+
+Content-
+What type of information are we dealing with?
+It is a task management application which makes it easy for users to stay organized and prioritize tasks effectively
+
+Relevance;
+-It help to organize and effectively lay out day to day activities with convenience.
+-It helps individuals keep track of various tasks.	
+-It will help improve a users-time management ability.
+
+
+Context-
+Where is the user seeking this application?
+-On a web application.
+
+Where - On a website
+How - By accessing it on a mobile or laptop and going to the link provided
+Why - It's convenient
+
+
+
+User-
+Who is consuming this content?
+-Regular folks who need an app to track their activities
+
+
+
+What does it mean to them? What value does it provide?
+
+-Reduces a user's forgetfulness
+- It will help a user create a list of day to day tasks which can be overwhelming
+- It is convenient. There's no need to carry a pen and paper on you everywhere.
+
+
+What pre-existing expectations do they have?
+-Ability to add items which convenience
+-Attractive interface
+-Ability to check off items
+-Ability to delete items 

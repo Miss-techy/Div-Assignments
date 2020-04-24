@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+    	body{
+    		background: url(img1.jpg) no-repeat;
+    		background-size: cover;
+    		font-family: Times New Roman;
+    	}
+    	
+.addedClass {
+	color: red;
+}
+
+.wrapper{
+	margin-top:15%;
+}
+
+
+button{
+width:20%;
+border:none;
+outline:none;
+height:40px;
+background:#fb2525;
+color:white;
+font-size:18px;
+border-radius:20px;
+margin-top:20px;
+}
+
+button:hover{
+cursor:pointer;
+color:#000;
+
+}
+input{
+
+color:black;
+font-size:16px;
+margin:10px;
+width:30%;
+margin:0 10px;
+}
+
+    </style>
+    <body>
+	
+<!DOCTYPE html>
+<html>
+	<head>	
+		<title>To do list application with JavaScript</title>
+	</head>
+	<body>
+		<center>
+			<div class="wrapper">
+		<h1>To Do List Application</h1>
+		<form id="todoForm">
+			<input type="text" id="todoInput"><br><br>
+			<button type="button" onclick="todoList()">Add Item</button>
+		</form>
+
+		<ul id="todoList"></ul>
+</div>
+		</center>
+	
+<script>
+
+	// Exercise: Create a to do list
+
+// todoList function used on button click to get user input and 
+function todoList() {
+	// store user value
+	var item    = document.getElementById('todoInput').value
+	// create a text node from the user input
+	var text    = document.createTextNode(item);
+	// create a li tag
+	var newItem = document.createElement('li');
+	// add the user input to the li tag
+	newItem.appendChild(text);
+	// append the li to the html todoList id tag
+	document.getElementById('todoList').appendChild(newItem);
+}
+
+</script>
+</body>
+</html>
