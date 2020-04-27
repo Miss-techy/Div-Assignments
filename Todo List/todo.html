@@ -188,6 +188,7 @@ font-size:1.4rem;
 
 <script>
 	
+//variables for input, button and container
 
 const addButton = document.querySelector('.addButton');
 var input = document.querySelector('.input');
@@ -195,28 +196,28 @@ const container = document.querySelector('.container');
 
 
 class item{
-	constructor(itemName){
+	constructor(itemName){ 
 		//create item div
 
-		this.createDiv(itemName);
+		this.createDiv(itemName); 
 	}
-	createDiv(itemName){
-		let input = document.createElement('input');
-		 input.value = itemName;
-		input.disabled = true;
+	createDiv(itemName){  
+		let input = document.createElement('input'); // create HTML element
+		 input.value = itemName; //assigning the value of input to itemName
+		input.disabled = true;   // input should be disabled
 		input.classList.add('item_input');
-		input.type = "text";
+		input.type = "text";  //assigning input to text
 
-		let itemBox = document.createElement('div');
-		itemBox.classList.add('item');
+		let itemBox = document.createElement('div');  //create an HTML element for itemBox
+		itemBox.classList.add('item');  //add the class item
 
-		let editButton = document.createElement('button');
-		editButton.innerHTML = "EDIT";
-		editButton.classList.add('editButton');
+		let editButton = document.createElement('button'); //create an HTML element for editButton
+		editButton.innerHTML = "EDIT";       //get the name of the edit button
+		editButton.classList.add('editButton');  //adding the class editButton
 
-		let removeButton = document.createElement('button');
-		removeButton.innerHTML = "Remove";
-		removeButton.classList.add('removeButton');
+		let removeButton = document.createElement('button');  //create a new HTML element remove button for 
+		removeButton.innerHTML = "Remove";    //get the name of the remove button
+		removeButton.classList.add('removeButton');  //removing the class editButton
 
 
 		container.appendChild(itemBox);
@@ -226,7 +227,7 @@ class item{
 		itemBox.appendChild(removeButton);
 
 
-		editButton.addEventListener('click', () => this.edit(input));
+		editButton.addEventListener('click', () => this.edit(input)); 
 
 		removeButton.addEventListener('click', () => this.remove(itemBox));
 
@@ -242,8 +243,8 @@ class item{
 }
 
 function check(){
-if(input.value !== ""){
-	new item(input.value);
+if(input.value !== ""){  
+	new item(input.value); 
 	input.value = ""; 
 }
 }
