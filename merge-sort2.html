@@ -47,6 +47,9 @@ var studentInp = prompt("Enter number of languages. Input must be 4 or more");
 if(studentInp < 4){
 	alert("Input more than 4 languages");
 }
+	else if(isNaN(studentInp)){
+	alert("Enter a number.");
+}
 else{
 	for(var i = 1; i <= studentInp; i++){
 		var InputLang = prompt("Enter preferred languages");
