@@ -14,14 +14,14 @@
 <script>
 	
 
-
+/*
 function merge(left, right) {
 	let arr = [];
 
 
 while(left.length && right.length) {
 	if (left[0] < right[0]){ 
-		arr.push(left.shift()); 
+		arr.push(left.shift()); //left first for ascending order. Right first for descnding order.
 	}
 	else{
 		arr.push(right.shift()); 
@@ -48,7 +48,7 @@ mergeSort(array.slice());
 
 console.log(mergeSort(array.slice()));
 
-
+*/
 
 
 //Assignment
@@ -59,7 +59,7 @@ function merge(left, right) {
 
 
 while(left.length && right.length) {
-	if (left[0] > right[0]){ 
+	if (left[0] < right[0]){ 
 		arr.push(left.shift()); 
 	}
 	else{
@@ -69,32 +69,34 @@ while(left.length && right.length) {
 return arr.concat(left.slice().concat(right.slice()));
 }
 
-function mergeSort(arr) {
-	if(arr.length < 2){
-		return arr;
+function mergeSort(arr) {  ///step 1 divide
+	if(arr.length < 2){   //checking if the element is less than 2
+		return arr;   
 	}
-	const middle = Math.floor(arr.length / 2); 
+	const middle = Math.floor(arr.length / 2);  //div de entire arr into two
 	const left = arr.slice(0, middle);  
 	const right = arr.slice(middle);    
 
 	return merge(mergeSort(left), mergeSort(right)); 
 }
 
+var userArr = []; //create empty array which will hold scores from user
 
 var myInput = prompt("Enter number of scores");
-if(myInput < 8){
-	alert("Enter more than 8 scores");
+if(myInput < 2){
+	alert("Enter more than 2 scores");
 }
 	else {
 		for(var i = 1; i < myInput; i++){
 			var myScores = prompt("Enter scores");
-			console.log(i);
+			userArr.push(myScores); //push the scores the user provides in the array
+			
 		}
 	}
 
-mergeSort(myScores.slice());
+mergeSort(userArr.slice());
 
-console.log(mergeSort(myScores.slice()));
+console.log(mergeSort(userArr.slice()));
 
 
 
