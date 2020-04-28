@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+<script>
+	
+
+
+
+
+
+//Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot.
+
+//For instance
+
+//First we start with an unsorted list. eg. [2,4,8,9,4,1,7,5]
+//We take one element which is referred to as the pivot(lets say 5);
+//Every element that is less than or equal to 5 goes on one side(let's say the left) and every element that is greater than 5 goes on the right side; so 2,4,1 go to the left and 8,9,7 go on the right 
+//So we repeat the same procedure for the sublist, so the pivot here will be 4, and 4 is greater than 2 and 1 so both go on the left
+//and 7 is the pivot so everything less goes on the left and the numbers greater than 7 goes on the right which are 8,9
+//we keep going until there's one element or no element in each list
+//so here 2 is the pivot and 1 goes on the left and 8 is the pivot so 9 goes on the right
+//Then we rejoin all the elements back together by starting from the bottom and taking the pivot numbers as we go, everything on the left goes behind it and everything on the right goes on top of it.
+//Starting from the bottom, since 2 is the pivot here 1 goes behind it and since and since 9 is the pivot 8 goes on top of it
+// 7 goes on top of 8,9
+//1,2 go on top of 4
+//So all of the numbers go infront of the first pivot(5) goes on top of it and all the numbers greater than 5 go behind it
+//So we have a sorted array of [1,2,4,5,7,8,9]
+
+
+//You can pick the first or the last number to use as a pivot
+
+
+
+
+
+
+array = [5,2,7,9,6,1,4,5,0]  //if we have an array
+	const pivot = 5;  //select pivot number
+	//create two empty arrays ; left and right. left array receives element which are less than the pivot and right receives elements greater or equal to pivot
+	const left = [];
+	const right = [];
+return quicksort([2,1,4,0]).concat(5).concat(quicksort([7,9,6,5]));
+
+//repeat same procedure 
+
+
+quicksort([2,1,4,0]);
+const pivot = 2;
+const left = [1,0];
+const right = [4];
+
+return quicksort([1,0]).concat(2).concat(quicksort([4]));  //[0,1,2,4]
+
+
+//repeat same procedure 
+
+
+quicksort([1,0]);
+const pivot = 1;
+const left = [0];
+const right = [];
+
+return quicksort([0]).concat(1).concat(quicksort([]));   //[0,1]
+
+
+quicksort([0]);
+return [0]; //since it's an empty array it can't be sorted
+
+
+quicksort([]);
+return [];
+
+
+quicksort([7,9,6,5]);
+const pivot = 7;
+const left = [6,5];
+const right = [9];
+return quicksort([6,5]).concat(7).concat(quicksort([9]));
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
