@@ -1,57 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+body {
+  margin: 0;
+  min-width: 250px;
+}
 
-
+/* Include the padding and border in an element's total width and height */
 * {
   box-sizing: border-box;
 }
 
-
+/* Remove margins and padding from the list */
 ul {
   margin: 0;
   padding: 0;
 }
 
-
+/* Style the list items */
 ul li {
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
+  list-style-type: none;
   background: #eee;
   font-size: 18px;
   transition: 0.2s;
-
   
+  /* make the list items unselectable */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
-
+/* Set all odd list items to a different color (zebra-stripes) */
 ul li:nth-child(odd) {
   background: #f9f9f9;
 }
 
+/* Darker background-color on hover */
 ul li:hover {
   background: #ddd;
 }
 
-
+/* When clicked on, add a background color and strike out text */
 ul li.checked {
   background: #888;
   color: #fff;
   text-decoration: line-through;
 }
 
-
+/* Add a "checked" mark when clicked on */
 ul li.checked::before {
   content: '';
   position: absolute;
@@ -65,6 +67,7 @@ ul li.checked::before {
   width: 7px;
 }
 
+/* Style the close button */
 .close {
   position: absolute;
   right: 0;
@@ -77,7 +80,7 @@ ul li.checked::before {
   color: white;
 }
 
-
+/* Style the header */
 .header {
   background-color: #f44336;
   padding: 30px 40px;
@@ -85,13 +88,14 @@ ul li.checked::before {
   text-align: center;
 }
 
-
+/* Clear floats after the header */
 .header:after {
   content: "";
   display: table;
   clear: both;
 }
 
+/* Style the input */
 input {
   margin: 0;
   border: none;
@@ -102,6 +106,7 @@ input {
   font-size: 16px;
 }
 
+/* Style the "Add" button */
 .addBtn {
   padding: 10px;
   width: 25%;
@@ -118,31 +123,27 @@ input {
 .addBtn:hover {
   background-color: #bbb;
 }
-
-#date{
-  text-align: right;
-  
-
-}
 </style>
+</head>
 <body>
-    
 
- <div id="myDIV" class="header">
-  <h2>My To Do List</h2>
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
   <input type="text" id="myInput" placeholder="Title...">
+  <br><br>  <br><br><br>
+   <input type="text" id="myDate" placeholder="Date...">
+   <br><br>  <br><br><br>
+   <input type="text" id="severityValue" placeholder="Title...">
+  <br><br><br><br>
+  
   <span onclick="newElement()" class="addBtn">Add</span>
 </div>
 
 <ul id="myUL">
-  <div id="date"></div>
-</ul> 
-
+  
+</ul>
 
 <script>
-
-
-
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
 var i;
@@ -154,6 +155,9 @@ for (i = 0; i < myNodelist.length; i++) {
   myNodelist[i].appendChild(span);
 }
 
+
+
+
 // Click on a close button to hide the current list item
 var close = document.getElementsByClassName("close");
 var i;
@@ -163,7 +167,6 @@ for (i = 0; i < close.length; i++) {
     div.style.display = "none";
   }
 }
-
 
 // Add a "checked" symbol when clicking on a list item
 var list = document.querySelector('ul');
@@ -178,24 +181,33 @@ function newElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
   var t = document.createTextNode(inputValue);
+  var inputDate = document.getElementById("myDate").value;
+  var severityVal = document.getElementById("severityValue").value;
+  
   li.appendChild(t);
   if (inputValue === '') {
     alert("You must write something!");
   } else {
     document.getElementById("myUL").appendChild(li);
-//Show date
-  var m = new Date();
-  document.getElementById("date").innerHTML = m;
-
-//sort dates
- m.sort(function(a,b){
-var c = new Date(a.date);
-var d = new Date(b.date);
-return c-d;
-});
-
   }
   document.getElementById("myInput").value = "";
+  var nt = document.createTextNode(myDate);
+  li.appendChild(nt);
+  if(myDate === ''){
+  alert("You must write something");
+  }else{
+  document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("dt").value = "";
+  
+  var st = document.createTextNode(severityVal);
+  li.appendChild(st);
+  if(severityVal === ''){
+  alert("You must write something");
+  }else{
+  document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("sl").value = "";
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
@@ -209,20 +221,8 @@ return c-d;
       div.style.display = "none";
     }
   }
-} 
-
-//Show today's date
-
-
-
-
+}
 </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
