@@ -211,6 +211,23 @@ function newElement() {
   document.getElementById("myUL").appendChild(li);
   }
   document.getElementById("severityVal").value = " " ;
+  
+  /*
+  //I tried to sort the date with this code. But it didn't work. 
+
+var myObjects = [
+{inputVal:' ', inputDate:" ", severityVal:" "};
+
+// sort by date
+myObjects.sort(function (x, y) {
+let a = new Date(x.inputDate),
+        b = new Date(y.inputDate);
+    return a - b;
+});
+  
+  
+  
+  */
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
