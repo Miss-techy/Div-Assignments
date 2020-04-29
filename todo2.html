@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -131,9 +132,9 @@ input {
   <h2 style="margin:5px">My To Do List</h2>
   <input type="text" id="myInput" placeholder="Title...">
   <br><br>  <br><br><br>
-   <input type="text" id="myDate" placeholder="Date...">
+   <input type="text" id="myDate" placeholder="Day/Month/Year...">
    <br><br>  <br><br><br>
-   <input type="text" id="severityValue" placeholder="Title...">
+   <input type="text" id="severityValue" placeholder="Severity...">
   <br><br><br><br>
   
   <span onclick="newElement()" class="addBtn">Add</span>
@@ -180,25 +181,27 @@ list.addEventListener('click', function(ev) {
 function newElement() {
   var li = document.createElement("li");
   var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
   var inputDate = document.getElementById("myDate").value;
   var severityVal = document.getElementById("severityValue").value;
   
+   var t = document.createTextNode(inputValue);
   li.appendChild(t);
   if (inputValue === '') {
     alert("You must write something!");
   } else {
     document.getElementById("myUL").appendChild(li);
   }
-  document.getElementById("myInput").value = "";
-  var nt = document.createTextNode(myDate);
-  li.appendChild(nt);
-  if(myDate === ''){
-  alert("You must write something");
-  }else{
-  document.getElementById("myUL").appendChild(li);
+  document.getElementById("myInput").value = " " ;
+  
+  
+   var dt = document.createTextNode(inputDate);
+  li.appendChild(dt);
+  if (inputDate === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
   }
-  document.getElementById("dt").value = "";
+  document.getElementById("myDate").value = " ";
   
   var st = document.createTextNode(severityVal);
   li.appendChild(st);
@@ -207,7 +210,7 @@ function newElement() {
   }else{
   document.getElementById("myUL").appendChild(li);
   }
-  document.getElementById("sl").value = "";
+  document.getElementById("severityVal").value = " " ;
 
   var span = document.createElement("SPAN");
   var txt = document.createTextNode("\u00D7");
