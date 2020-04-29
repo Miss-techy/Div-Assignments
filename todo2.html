@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -180,11 +179,13 @@ list.addEventListener('click', function(ev) {
 // Create a new list item when clicking on the "Add" button
 function newElement() {
   var li = document.createElement("li");
+  var linebreak = document.createElement("br");
+  var linebreakk = document.createElement("br");
   var inputValue = document.getElementById("myInput").value;
   var inputDate = document.getElementById("myDate").value;
   var severityVal = document.getElementById("severityValue").value;
   
-   var t = document.createTextNode("Name of task: " + inputValue + "  " + ", ");
+   var t = document.createTextNode("Name of task: " + inputValue);
   li.appendChild(t);
   if (inputValue === '') {
     alert("You must write something!");
@@ -194,7 +195,8 @@ function newElement() {
   document.getElementById("myInput").value = " " ;
   
   
-   var dt = document.createTextNode("Date & Time: " + inputDate + "  " + ", ");
+  var dt = document.createTextNode("Date & Time: " + inputDate);
+  li.appendChild(linebreak);
   li.appendChild(dt);
   if (inputDate === '') {
     alert("You must write something!");
@@ -203,7 +205,8 @@ function newElement() {
   }
   document.getElementById("myDate").value = " ";
   
-  var st = document.createTextNode("Severity: " + severityVal + "  " + ". ");
+  var st = document.createTextNode("Severity: " + severityVal);
+  li.appendChild(linebreakk);
   li.appendChild(st);
   if(severityVal === ''){
   alert("You must write something");
