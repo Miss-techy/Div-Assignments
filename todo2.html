@@ -130,7 +130,7 @@ input {
 
 <div id="myDIV" class="header">
   <h2 style="margin:5px">My To Do List</h2>
-  <input type="text" id="myInput" placeholder="Title...">
+  <input type="text" id="myInput" placeholder="Task...">
   <br><br>  <br><br><br>
    <input type="text" id="myDate" placeholder="Date & Time...">
    <br><br>  <br><br><br>
@@ -184,7 +184,7 @@ function newElement() {
   var inputDate = document.getElementById("myDate").value;
   var severityVal = document.getElementById("severityValue").value;
   
-   var t = document.createTextNode(inputValue);
+   var t = document.createTextNode("Name of task: " + inputValue + "  " + ", ");
   li.appendChild(t);
   if (inputValue === '') {
     alert("You must write something!");
@@ -194,7 +194,7 @@ function newElement() {
   document.getElementById("myInput").value = " " ;
   
   
-   var dt = document.createTextNode(inputDate);
+   var dt = document.createTextNode("Date & Time: " + inputDate + "  " + ", ");
   li.appendChild(dt);
   if (inputDate === '') {
     alert("You must write something!");
@@ -203,7 +203,7 @@ function newElement() {
   }
   document.getElementById("myDate").value = " ";
   
-  var st = document.createTextNode(severityVal);
+  var st = document.createTextNode("Severity: " + severityVal + "  " + ". ");
   li.appendChild(st);
   if(severityVal === ''){
   alert("You must write something");
@@ -214,10 +214,8 @@ function newElement() {
   
   /*
   //I tried to sort the date with this code. But it didn't work. 
-
 var myObjects = [
 {inputVal:' ', inputDate:" ", severityVal:" "};
-
 // sort by date
 myObjects.sort(function (x, y) {
 let a = new Date(x.inputDate),
@@ -245,4 +243,3 @@ let a = new Date(x.inputDate),
 </script>
 
 </body>
-</html>
