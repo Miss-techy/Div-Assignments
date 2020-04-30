@@ -273,17 +273,25 @@ function newElement() { //create a function
   }
 
 
-let myArray = [{}];
-myUser.sort(function (x, y) {
-let a = new Date(x.inputDate),
-        b = new Date(y.inputDate);
-    return a - b;
+
+var array = [];
+
+array.push(inputDate);
+
+for(var i = 0; i < inputDate.length; i++)
+{
+  
+ }
+
+array.sort(function (x, y) {
+if(x.inputDate < y.inputDate);
+    return 1;
+if(x.inputDate > y.inputDate);
+    return -1;
+    return 0;
 });
 
-myArray.push(inputDate);
-
-console.log(myArray);
-
+console.log(array);
 
 }
 
