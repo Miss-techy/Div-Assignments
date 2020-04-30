@@ -1,261 +1,293 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet"> 
-    <title>Document</title>
-</head>
-
-
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+body {
+  margin: 0;
+  min-width: 250px;
+  background: cream;
+}
 
-
+/* Include the padding and border in an element's total width and height */
 * {
-	padding:0;
-	margin:0;
-	box-sizing:border-box;
+  box-sizing: border-box;
 }
 
-body{
-	height:100%;
-	background-color: #111;
-}
+.wrapper{
 
-
-h1{
-	font-size:3rem;
-	font-weight:50;
-	margin:1rem 0 3rem;
-	text-align:center;
-	color:#fff;
-	font-family: 'Hind', sans-serif;
-}
-
-
-.styling{
-	font-weight:800;
-	color:lime;
 
 }
 
-
-.input_div{
-	display:flex;
-	justify-content: center;
-	align-items:center;
-	text-align:center;
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
 }
 
-
-
-.input_div .input{
-	padding:0.5rem 1rem;
-	height:50px;
-	border:none;
-outline :none;
-background-color: #fff;
-width:450px;
-font-size:1.15rem;
-margin:0.25rem;
-border-radius:25px;
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  
+  /* make the list items unselectable */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-
-.addButton{
-	height:50px;
-	width:50px;
-	border-radius: 25px;
-	outline:none;
-border:none;
-background-color: lime;
-color:#000;
-margin:0 25px;
-cursor: pointer;
-font-weight: bold;
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
 }
 
-
-.addButton:hover{
-	opacity:0.7;
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
 }
 
-
-
-.container{
-	display:flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin-top: 2rem;
-	text-align: center;
-
+/* When clicked on, add a background color and strike out text */
+ul li.checked {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
 }
 
-
-.item{
-	padding: 0.5rem;
-margin-bottom: 1.5rem;
-border-bottom: 4px solid #fff;
+/* Add a "checked" mark when clicked on */
+ul li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
 }
 
-
-.item_input{
-	background: none;
-	outline:none;
-	color:#fff;
-	border:none;
-	width:350px;
-font-size:1.4rem;
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
 }
 
-
-
-.editButton{
-	font-size:1.4rem;
-	margin:0 0.5rem;
-	font-family: 'Hind', sans-serif;
-	background: none;
-	outline: none;
-	color: lime;
-	border: none;
-	cursor: pointer;
+.close:hover {
+  background-color: #f44336;
+  color: white;
 }
 
-
-
-.removeButton{
-	font-size:1.4rem;
-	margin:0 0.5rem;
-	font-family: 'Hind', sans-serif;
-	background: none;
-	outline: none;
-	color: #E00;
-	border: none;
-	cursor: pointer;
+/* Style the header */
+.header {
+  background-color: coral;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+  width:60%;
 }
 
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width:75%;
+  padding: 10px;
+  
+  font-size: 16px;
+}
 
+/* Style the "Add" button */
+.addBtn {
+  padding: 10px;
+  width: 35%;
+  background: #d9d9d9;
+  color: #555;
+  
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 0;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.addBtn:hover {
+  background-color: #bbb;
+}
 </style>
-
-
-
-
-
-
+</head>
 <body>
-    
-<h1><span class="styling">TODO</span>List</h1>
-<div class="input_div">
-	<input class="input" type="text" placeholder="What Do You Want To Do ...">
-<button class="addButton">Hit </button>
-</div>
-<div class= "container">
-	
-<div class="item">
-	<input type="text" class="item_input" disabled>
-	<button class="editButton">EDIT</button>
-	<button class="removeButton">Remove</button>
-</div>
-<!---
-<div class="item">
-	<input type="text" class="item_input" value = "Sport" disabled>
-	<button class="editButton">EDIT</button>
-	<button class="removeButton">Remove</button>
-</div>
---->
+
+
+<div class='wrapper'>
+  <center>
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+
+   <center><input type="text" id="myInput" placeholder="Task..."></center>
+  <br><br>  <br>
+   <center><input type="text" id="myDate" placeholder="Date & Time..."></center>
+   <br><br>  <br>
+   <input type="text" id="severityValue" placeholder="Severity...">
+  <br><br><br><br>
+  
+ <span onclick="newElement()" class="addBtn">Add</span>
 </div>
 
+<ul id="myUL">
+  
+</ul>
+</center>
+</div>
 
 <script>
-	
-//variables for input, button and container
 
-const addButton = document.querySelector('.addButton');
-var input = document.querySelector('.input');
-const container = document.querySelector('.container');
+//Algorithm for todo list
 
-
-class item{
-	constructor(itemName){ 
-		//create item div
-
-		this.createDiv(itemName); 
-	}
-	createDiv(itemName){  
-		let input = document.createElement('input'); // create HTML element
-		 input.value = itemName; //assigning the value of input to itemName
-		input.disabled = true;   // input should be disabled
-		input.classList.add('item_input');
-		input.type = "text";  //assigning input to text
-
-		let itemBox = document.createElement('div');  //create an HTML element for itemBox
-		itemBox.classList.add('item');  //add the class item
-
-		let editButton = document.createElement('button'); //create an HTML element for editButton
-		editButton.innerHTML = "EDIT";       //get the name of the edit button
-		editButton.classList.add('editButton');  //adding the class editButton
-
-		let removeButton = document.createElement('button');  //create a new HTML element remove button for 
-		removeButton.innerHTML = "Remove";    //get the name of the remove button
-		removeButton.classList.add('removeButton');  //removing the class editButton
+//HTML
+//1. Create 3 input boxes for the task, Date & Time, and severity level
+//2. Create a button to output the results
+//3. Create an unordered list tag to display input
 
 
-		container.appendChild(itemBox);
 
-		itemBox.appendChild(input);
-		itemBox.appendChild(editButton);
-		itemBox.appendChild(removeButton);
+//Javascript
+//1.Create a close button for each list item
+//2. Create a loop to work through every list item and append the button at the end of the list
+//3. Create an onclick function to remove the list item from the browser window
+//4.Create a function to check off the items on the list
+//5.Get input ids from HTML and create a new item when the user clicks on the add button
+//6.
 
 
-		editButton.addEventListener('click', () => this.edit(input)); 
 
-		removeButton.addEventListener('click', () => this.remove(itemBox));
 
-	}
 
-	edit(input){
-		input.disabled = !input.disabled;
-	}
 
-	remove(item){
-		container.removeChild(item);
-	}
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("li"); //create a variable and assign it to the list item
+var i; //declaring a variable
+for (i = 0; i < myNodelist.length; i++) { //loop through the list items
+  var span = document.createElement("SPAN"); //create a HTML element called span and assign a variable to it
+  var txt = document.createTextNode("\u00D7"); //create a text node(close button) and assign a variable to it
+  span.className = "close";  //getting the class name "close"
+  span.appendChild(txt); //append the element(span) to the node txt
+  myNodelist[i].appendChild(span); //appending the looped li elements to the span 
 }
 
-function check(){
-if(input.value !== ""){  
-	new item(input.value); 
-	input.value = ""; 
-}
+
+
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close"); //assign a variable "close"
+var i; //declaring a variable i
+for (i = 0; i < close.length; i++) {  //loop through the close buttons
+  close[i].onclick = function() {  //when user clicks a close button implement function below
+    var div = this.parentElement;   //get the parent element which is ul
+    div.style.display = "none";  //do not display the item
+  }
 }
 
-addButton.addEventListener('click', check);
-window.addEventListener('keydown', (e) => {
-	if(e.which == 13){
-		check();
-	}
-})
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul'); //assign a variable called list to ul in 
+list.addEventListener('click', function(ev) { //add a click function 
+  if (ev.target.tagName === 'LI') { //if the user cliks on an item
+    ev.target.classList.toggle('checked');//check the list off if task has been done
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() { //create a function 
+  var li = document.createElement("li"); //assign a variable li to a newly created HTML element called "li"
+  var linebreak = document.createElement("br"); //assign a variable linebreak to a newly created HTML element called "br"
+  var linebreakk = document.createElement("br"); //assign a variable linebreakk to a newly created HTML element called "br"
+  var inputValue = document.getElementById("myInput").value;//assign a variable to an HTML id 
+  var inputDate = document.getElementById("myDate").value; //assign a variable to an HTML id
+  var severityVal = document.getElementById("severityValue").value; //assign a variable to an HTML id element
+  
+   var t = document.createTextNode("Name of task: " + inputValue); //assign a var to a created text node
+  li.appendChild(t); //append li to the text node t
+  if (inputValue === '') { //if the input equals nothing
+    alert("You must write something!"); //alert the user to type something
+  } else {
+    document.getElementById("myUL").appendChild(li); //else append li to the HTML id "myUl"
+  }
+  document.getElementById("myInput").value = " " ;//get the value of the user's input
+  
+  
+  var dt = document.createTextNode("Date & Time: " + inputDate); //assign a var to a created text node
+  li.appendChild(linebreak); //append li to br element
+  li.appendChild(dt); //append li to the text node dt
+  if (inputDate === '') { //if the input equals to nothing
+    alert("You must write something!");//alert the user to type something
+  } else {
+    document.getElementById("myUL").appendChild(li); //else append li to the HTML id "myUl"
+  }
+  document.getElementById("myDate").value = " "; //get the value of the user's input
+
+
+
+
+
+  
+  var st = document.createTextNode("Severity: " + severityVal); //assign a var to a created text node
+  li.appendChild(linebreakk);//append li to br element 
+  li.appendChild(st); //append li to the text node st
+  if(severityVal === ''){  //if the input equals to nothing
+  alert("You must write something"); //alert the user to type something
+  }else{
+  document.getElementById("myUL").appendChild(li); //else append li to the HTML id "myUl"
+  }
+  document.getElementById("severityValue").value = " " ; //get the value of the user's input
+  
+
+
+
+  var span = document.createElement("SPAN"); //create an HTML element and assign a variable to it
+  var txt = document.createTextNode("\u00D7"); //create a text node (close element) and assign a variable to it
+  span.className = "close"; //get the class name of close
+  span.appendChild(txt); //append the span element to the text node txt
+  li.appendChild(span); //append the li to span element
+
+  for (i = 0; i < close.length; i++) { //loop through the close buttons
+    close[i].onclick = function() { //when user clicks a close button implement function below
+      var div = this.parentElement; //get the parent element which is ul
+      div.style.display = "none"; //do not display the item
+    }
+  }
+
+
+let myArray = [{}];
+myUser.sort(function (x, y) {
+let a = new Date(x.inputDate),
+        b = new Date(y.inputDate);
+    return a - b;
+});
+
+myArray.push(inputDate);
+
+console.log(myArray);
+
+
+}
 
 </script>
+
 </body>
-</html>
+
