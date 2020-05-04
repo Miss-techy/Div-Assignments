@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Title</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+	//Algorithm
+//create an empty array to push the user's input into it
+	//create a prompt to recieve an input from user
+//create a for loop to loop the items and in the for loop prompt the user to give the numbers
+//push the values into an array
+//create a for loop to get the length of the array and and use a var called total to add it up
+//calculate the avg by dividing the total and the chracters in the array
+//console.log it
+
+
+//Receive not less than 8 numbers from a user and calculate the average number value of those numbers; store the numbers in an array
+
+
+
+
+var emptArray = []; //create an empty array to house the values
+var total = 0;      //set a variable of total to 0
+var enterNumber = prompt("Enter a number"); //create a prompt for the user to enter number he wants
+if (enterNumber < 2){
+	alert("Input must not be less than 8") //if the number is less than 8 alert the user
+}
+else if (isNaN(enterNumber)){
+	alert("Enter a number")  //if the input is not a number alert user
+}
+else{
+	for(var i = 0; i < enterNumber; i++){  //create a for loop to loop the number the uer entered
+	var enterAnother = prompt("Enter number now"); //allow user to enter actual numbers now
+	emptArray.push(enterAnother);    //push the numbers into an empty array
+	 for(var i = 0; i < emptArray.length; i++){  //create a loop to get the length of array
+	 	total = total + emptArray[i]; //or (total += emptArray[i]) //add up the characters in the array
+	 }
+	 var avg = total / emptArray.length; //create an avg variable to store the calculation of the average number of values in the array
+	}
+	
+}
+
+console.log(avg); //console log output
+
+</script>
+
+
+</body>
+</html>
