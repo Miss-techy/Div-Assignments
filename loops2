@@ -32,7 +32,7 @@
 var emptArray = []; //create an empty array to house the values
 var total = 0;      //set a variable of total to 0
 var enterNumber = prompt("Enter a number"); //create a prompt for the user to enter number he wants
-if (enterNumber < 2){
+if (enterNumber < 8){
 	alert("Input must not be less than 8") //if the number is less than 8 alert the user
 }
 else if (isNaN(enterNumber)){
