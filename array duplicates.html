@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Title</title>
+  <meta charset="utf-8"><!-- Encoding-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+//Algorithm
+        
+//create a function  with a parameter of array
+//create a variable and assign an empty array to it
+//loop through the array characters
+//use indexOf to search for matching characters in the looping elements
+//push the characters into the empty array
+// return the empty array
+//create a variable and assign it to the function, and the name of the first array 
+//sort the array
+//output the results
+        
+        
+var myArray = [10, 22, 20, 10, 11];
+   
+        
+    function getDuplicates(array){
+        var emptArr = [];
+        
+        // Loop through array values
+        for(i=0; i < array.length; i++){
+            if(emptArr.indexOf(array[i]) === -1) { 
+                emptArr.push(array[i]);
+            }
+        }
+        return emptArr;
+    }
+    
+    
+    var original = getDuplicates(myArray);
+    original.sort();
+    document.write("The array without duplicates is: " + original); 
+
+  
+
+
+
+    </script>
+  
+</body>
+</html>                            
+
+
+</script>
+
+
+</body>
+</html>
+
+
