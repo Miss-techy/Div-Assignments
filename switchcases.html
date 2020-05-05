@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Title</title>
+  <meta charset="utf-8"><!-- Encoding-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+
+//Algorithm
+//1. create a prompt for the user to enter a fruit
+//2.with the switch statement and the variable assigned to the prompt start start with the case of orange, if the user enters oranges output the price of oranges and break the code
+//3. If the users enter banana output the price of banana
+//4. If the users enter kiwi output the price of kiwi
+//3. If the users enter mango output the price of mango
+//3. If the users enter pear output the price of pear
+//3. If the users enters nothing alert the user to enter a fruit
+//3. Create a default statement with the variable when the fuit is not on the list
+
+
+const myFruit = prompt("Enter fruit");
+switch (myFruit) {
+  case 'Orange': 
+    document.write('Oranges are $0.59 a pound.');
+
+    break;
+
+  case 'Banana': 
+  document.write('Bananas are $0.50 a pound.');
+
+  case 'Kiwi': 
+    document.write('Kiwis are $1.09 a pound.'); 
+
+    break;
+
+    case 'Mango': 
+    document.write('Mangoes are $0.49 a pound.'); 
+
+    break;
+
+    case 'Pear': 
+    document.write('Pears are $1.49 a pound.'); 
+
+    break;
+
+    case '': 
+    alert('Please enter a fruit.'); 
+
+    break;
+
+  default:
+    document.write(`Sorry, we are out of ${myFruit}.`);
+}
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
