@@ -169,7 +169,7 @@ var confirmPassword = document.getElementById("confirmPassword").value;
 
 
 
-if(userName = ""){
+if(userName == ""){
     alert("Enter Username");
   }
 
@@ -205,8 +205,8 @@ userDetails['formPassword'] = formPassword;
  console.log(userDetails);
 
 
-
-
+localStorage.setItem("formEmail", formEmail);
+localStorage.setItem("formPassword", formPassword);
  }
 }
 
@@ -216,16 +216,6 @@ userDetails['formPassword'] = formPassword;
 
 
 
-/*
-var userDetails = [];
- var details = {
- 	Name: userName,
- 	Email : formEmail,
- 	Password : formPassword,
- }
-userDetails.push(details);
-console.log(userDetails);
-*/
 </script>
 
 
