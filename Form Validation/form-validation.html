@@ -168,7 +168,12 @@ var formPassword = document.getElementById("formPassword").value;
 var confirmPassword = document.getElementById("confirmPassword").value;
 
 
-if(userName.length < 2){
+
+if(userName = ""){
+    alert("Enter Username");
+  }
+
+else if(userName.length < 2){
     alert("Enter Full  User name");
   }
 
@@ -176,6 +181,9 @@ if(userName.length < 2){
   alert("Enter valid email");
   }
 
+else if(formPassword.length < 8){
+    alert("Password must be more than 8 or more characters");
+  }
 
 else if(formPassword=="" && confirmPassword==""){	
 alert("Enter passwords");							
@@ -185,14 +193,28 @@ else if(!(formPassword==confirmPassword)){
 alert("Match your passwords correctly");
 }
 
-else if(formPassword.length < 8){
-    alert("Password must be more than 8 or more characters");
-  }
-
 
 else{  		
-alert("Thanks for signing up");
+
+
+var userDetails = {};
+
+"Name" = userDetails[userName] ;
+ "E-mail" = userDetails[formEmail] ;
+"Password" = userDetails[formPassword];
+ console.log(userDetails);
+
+
+
+
+ }
 }
+
+
+
+
+
+
 /*
 var userDetails = [];
  var details = {
@@ -203,24 +225,6 @@ var userDetails = [];
 userDetails.push(details);
 console.log(userDetails);
 */
-
-
-var userDetails = {};
-
-userDetails[userName] = "Name";
-userDetails[formEmail] = "E-mail";
-userDetails[formPassword] = "Password";
- console.log(userDetails);
-
- }
-
-
-
-
-
-
-
-
 </script>
 
 
