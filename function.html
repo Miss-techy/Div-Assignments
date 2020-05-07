@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Title</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+	//create a function with a parameter representing the number being calculated for its factorial
+	//if the number(n) is greater than 0 or less than/equal to 1 return 1 since the factorial of 0 and 1 is 1
+	//else 
+
+function factorial(n) { // n represents a number we want to find a factorial of
+
+//since 0! = 1, 1! = 1, 
+
+if (n > 0 && n <= 1){
+	return 1;
+}
+else{
+	return n * factorial(n - 1) ;
+}
+
+}
+console.log(factorial(5));
+
+
+
+function factorial(n) {
+	if(n > 0 && n <= 1){
+		return 1;
+	}
+	else{
+		return n * factorial(n - 1);
+	}
+}
+console.log(factorial(3));
+
+
+
+</script>
+
+
+</body>
+</html>
