@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart System</title>
+</head>
+<body>
+
+<script src="customer.js" type="text/javascript"></script>
+<script src="item.js" type="text/javascript"></script>
+<script>
+    //TODO: Use quantity on the item
+    //1. Cart holds items
+    //2. Add items
+    //3. Remove items
+    //4. Calculate total
+    //5. Customer information
+
+
+
+    //create a class called cart
+    //create an empty array
+    //create a constructor
+    //create a default customer with name, number and address
+    //create an addItem with name price
+    //push the item if the item is not on the list
+    //create a removeItem if the user wants to remove an item from cart and pass a parameter
+    //create a variable to display items
+    //calculate for the total items in the cart
+    //create a cart to add and remove items in cart
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart System</title>
+</head>
+<body>
+
+<script src="customer.js" type="text/javascript"></script>
+<script src="item.js" type="text/javascript"></script>
+<script>
+    //TODO: Use quantity on the item
+    //1. Cart holds items
+    //2. Add items
+    //3. Remove items
+    //4. Calculate total
+    //5. Customer information
+
+    //Item - name, price, quantity
+    //Customer - name, momo number, address
+    //Cart - Item, Customer
+    class Cart {
+        //list of items
+        items = [];
+
+
+        constructor() {
+        }
+
+        //adding a customer
+        addCustomer(name, number, address) {
+            this.customer = new Customer(name, number, address);
+        }
+
+        //add an item to cart
+        addItem(name, price) {
+            //ensure item does not already exist
+            //find the name in the item list,
+            // return the index of the item
+            let index = this.items.findIndex((item) => {
+                return item.name.toLowerCase() === name.toLowerCase();
+            });
+
+            //add the item to the list if not found
+            if(index === -1) {
+                //create item class
+                let item = new Item(name, price);
+                //add item to list
+                this.items.push(item);
+            } else {
+                console.log('Element ' + name + ' is already in the list.');
+            }
+        }
+
+        //remove an item from cart
+        removeItem(name) {
+            //find the name in the item,
+            // return the index of the item
+            let index = this.items.findIndex((item) => {
+                return item.name.toLowerCase() === name.toLowerCase();
+            });
+            console.log('index', index);
+            //delete the item from the list using the index if found
+            if(index !== -1) {
+                this.items.splice(index, 1);
+            } else {
+                console.log('Element ' + name + ' is not in the list.');
+            }
+        }
+
+
+        //display items
+        displayItems() {
+            console.log(this.items);
+            this.items.forEach((item) => {
+                console.log(item.name, item.price);
+            });
+        }
+
+        //get total items in cart
+        totalItems() {
+            console.log('total items', this.items.length);
+        }
+
+        //total price of items
+        totalPrice() {
+            //calculate the price
+            let sum = 0;
+            this.items.forEach((item) => {
+                sum = sum + item.price;
+            });
+
+            console.log('total price', sum);
+        }
+    }
+
+    //create a cart
+    let cart = new Cart();
+    //add customer details to cart
+    cart.addCustomer('Jane Doe', '124894', 'Lake View');
+    console.log(cart.customer.name);
+    //add items to cart
+    cart.addItem('Cookies', 5.0);
+    cart.addItem('Ice Cream', 11.0);
+    cart.addItem('Yoghurt', 15.0);
+    cart.addItem('Cabbage', 50.0);
+    cart.addItem('Onion', 10.0);
+    cart.addItem('CABBAGE', 10.0);
+    cart.addItem('Carrot', 12.0);
+    cart.displayItems();
+    cart.totalItems();
+    cart.totalPrice();
+    cart.removeItem('Apple');
+    cart.removeItem('Cabbage');
+    cart.displayItems();
+    cart.totalItems();
+    cart.totalPrice();
+</script>
+</body>
+</html>
+
+</script>
+</body>
+</html>
