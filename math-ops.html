@@ -6,213 +6,85 @@
     </head>
 <body>
 
-
-
-<input id="firstNumber" type="text"/>
-<input id="secondNumber" type="text"/>
+<h1 style="font-weight: bold; text-align: center;">Calulate Two Numbers</h1>
+<center>
+Enter First Number: <br> <br><input type = "text" id = "num1"  placeholder= "Enter">
 <br><br>
-<button type="button" onclick="divide()">Divide</button>
-<button type="button" onclick="add()">Add</button>
-<button type="button" onclick="subtract()">Subtract</button>
-<button type="button" onclick="multiply()">Multiply</button>
+Enter Second Number: <br><br> <input type = "text" id = "num2" placeholder="Enter"><br><br>
+Select Operator: <br><br>
+<select id = "operator">
 
+	<option value = "add"> Add </option>
+	<option value = "subtract"> Subtract </option>
+	<option value = "multiply"> Multiply </option>
+	<option value = "divide"> Divide </option>
 
-<p id="someText"></p>
+</select><br><br>
 
+Click to get result: <br><br>
+<input type = "button" value = "Result" onclick="calculate()">
+<br>
+<br>
 
+<p id="someText" style="font-weight: bold; font-size: 20px;"></p>
+
+</center>
 
 <script>
 
 
-/*
 
+function calculate(){
 
-function add(first,second) {
-  return first + second;
+var num1 = parseFloat(document.getElementById("num1").value)
+var num2 = parseFloat(document.getElementById("num2").value)
+var sign = document.getElementById("operator").value;
+var result = 0;
+
+if(sign === "add"){
+
+result = num1 + num2;
+document.getElementById("someText").innerHTML = result;
+
 }
+if(sign === "subtract"){
 
-alert( add(1, 2) );
+result = num1 - num2;
+document.getElementById("someText").innerHTML = result;
 
-function divide(first,second) {
-  return first / second;
 }
+if(sign === "multiply"){
 
-alert( divide(4, 2) );
-
-
-
-function multiply(first,second) {
-  return first * second;
-}
-
-alert( multiply(4, 2) );
-
-
-function subtract(first,second) {
-  return first - second;
-}
-
-alert( divide(4, 2) );
-
-
-*/
-
-//create a function called add
-//get the ids of the inout boxes
-
-
-//Algorithm
-//1. create a function 
-//2. get the ids of both input boxes and assign them a variable
-//3. if the user doesnt enter a number, alert user
-//4. else use parseInt for both numbers
-//5.create a variable and assign the addition operation to both input values
-//6.output the result
-//7.use localStorage and set the key, value pairs of the first input and second input
-//8.assign a variable to get the input from localstorage and output result
-//8.repeat the process for the rest of the operations
-
-
-function add() {  
-
-	var firstNumber = document.getElementById("firstNumber").value; 
-	var secondNumber = document.getElementById("secondNumber").value; 
-
-
-if (isNaN(firstNumber) || isNaN(secondNumber)) { 
-	alert("Enter a number");  
-}
-
-
-
-else{
-	firstNumber = parseInt(firstNumber); 
-	secondNumber = parseInt(secondNumber);
-
-var addResult = firstNumber + secondNumber;  
-
-document.getElementById("someText").innerHTML = addResult;
+result = num1 * num2;
+document.getElementById("someText").innerHTML = result;
 
 
 }
+if(sign === "divide"){
 
-
- localStorage.setItem("firstAddInput", firstNumber);
- var addOne = localStorage.getItem("firstAddInput")
-	console.log(addOne);
-
-	localStorage.setItem("secondAddInput", secondNumber);
-	var addTwo = localStorage.getItem("secondAddInput")
-	console.log(addTwo);
-}
-
-
-
-
-
-
-
-function multiply() {
-
-	var firstNumber = document.getElementById("firstNumber").value;
-	var secondNumber = document.getElementById("secondNumber").value;
-
-
-if (isNaN(firstNumber) || isNaN(secondNumber)) {
-	alert("Enter a number");
-}
-
-else{
-	firstNumber = parseInt(firstNumber);
-	secondNumber = parseInt(secondNumber);
-
-var multResult = firstNumber * secondNumber;  
-
-document.getElementById("someText").innerHTML = multResult;
-
-
-}
-localStorage.setItem("firstMultInput", firstNumber);
- var multOne = localStorage.getItem("firstMultInput")
-	console.log(multOne);
-
-	localStorage.setItem("secondMultInput", secondNumber);
-	var multTwo = localStorage.getItem("secondMultInput")
-	console.log(multTwo);
-
-}
-	
-
-
-
-
-function divide() {
-
-	var firstNumber = document.getElementById("firstNumber").value;
-	var secondNumber = document.getElementById("secondNumber").value;
-
-
-if (isNaN(firstNumber) || isNaN(secondNumber)) {
-	alert("Enter a number");
-}
-
-else{
-	firstNumber = parseInt(firstNumber);
-	secondNumber = parseInt(secondNumber);
-
-var diviResult = firstNumber / secondNumber;  
-
-document.getElementById("someText").innerHTML = diviResult;
+result = num1 / num2;
+document.getElementById("someText").innerHTML = result;
 
 }
 
-localStorage.setItem("firstDiviInput", firstNumber);
- var diviOne = localStorage.getItem("firstDiviInput")
-	console.log(diviOne);
+//set and get user input of first number
+localStorage.setItem("firstNumber", num1);
+ var inputOne = localStorage.getItem("firstNumber")
+	console.log(inputOne);
 
-	localStorage.setItem("secondDiviInput", secondNumber);
-	var diviTwo = localStorage.getItem("secondDiviInput")
-	console.log(diviTwo);
-}
+//set and get user input of second number
+	localStorage.setItem("secondNumber", num2);
+	var inputTwo = localStorage.getItem("secondNumber")
+	console.log(inputTwo);
 
-
-
-
-
-function subtract() {
-
-	var firstNumber = document.getElementById("firstNumber").value;
-	var secondNumber = document.getElementById("secondNumber").value;
-
-
-if (isNaN(firstNumber) || isNaN(secondNumber)) {
-	alert("Enter a number");
-}
-
-else{
-	firstNumber = parseInt(firstNumber);
-	secondNumber = parseInt(secondNumber);
-
-	var subResult = firstNumber - secondNumber;  
-
-document.getElementById("someText").innerHTML = subResult;
+//set and get user input of result
+localStorage.setItem("result", result)
+var getResult = localStorage.getItem("result")
+console.log(getResult);
 
 }
 
-
-
- localStorage.setItem("firstSubInput", firstNumber);
- var subOne = localStorage.getItem("firstSubInput")
-	console.log(subOne);
-
-	localStorage.setItem("secondSubInput", secondNumber);
-	var subTwo = localStorage.getItem("secondSubInput")
-	console.log(subTwo);
-
-}
-
-
-    </script>
+</script>
 
 </body>
 
