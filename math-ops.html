@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Functions</title>
+    </head>
+<body>
+
+
+
+<input id="firstNumber" type="text"/>
+<input id="secondNumber" type="text"/>
+<br><br>
+<button type="button" onclick="divide()">Divide</button>
+<button type="button" onclick="add()">Add</button>
+<button type="button" onclick="subtract()">Subtract</button>
+<button type="button" onclick="multiply()">Multiply</button>
+
+
+<p id="someText"></p>
+
+
+
+<script>
+
+
+/*
+
+
+function add(first,second) {
+  return first + second;
+}
+
+alert( add(1, 2) );
+
+function divide(first,second) {
+  return first / second;
+}
+
+alert( divide(4, 2) );
+
+
+
+function multiply(first,second) {
+  return first * second;
+}
+
+alert( multiply(4, 2) );
+
+
+function subtract(first,second) {
+  return first - second;
+}
+
+alert( divide(4, 2) );
+
+
+*/
+
+//create a function called add
+//get the ids of the inout boxes
+
+
+//Algorithm
+//1. create a function 
+//2. get the ids of both input boxes and assign them a variable
+//3. if the user doesnt enter a number, alert user
+//4. else use parseInt for both numbers
+//5.create a variable and assign the addition operation to both input values
+//6.output the result
+//7.use localStorage and set the key, value pairs of the first input and second input
+//8.assign a variable to get the input from localstorage and output result
+//8.repeat the process for the rest of the operations
+
+
+function add() {  
+
+	var firstNumber = document.getElementById("firstNumber").value; 
+	var secondNumber = document.getElementById("secondNumber").value; 
+
+
+if (isNaN(firstNumber) || isNaN(secondNumber)) { 
+	alert("Enter a number");  
+}
+
+
+
+else{
+	firstNumber = parseInt(firstNumber); 
+	secondNumber = parseInt(secondNumber);
+
+var addResult = firstNumber + secondNumber;  
+
+document.getElementById("someText").innerHTML = addResult;
+
+
+}
+
+
+ localStorage.setItem("firstAddInput", firstNumber);
+ var addOne = localStorage.getItem("firstAddInput")
+	console.log(addOne);
+
+	localStorage.setItem("secondAddInput", secondNumber);
+	var addTwo = localStorage.getItem("secondAddInput")
+	console.log(addTwo);
+}
+
+
+
+
+
+
+
+function multiply() {
+
+	var firstNumber = document.getElementById("firstNumber").value;
+	var secondNumber = document.getElementById("secondNumber").value;
+
+
+if (isNaN(firstNumber) || isNaN(secondNumber)) {
+	alert("Enter a number");
+}
+
+else{
+	firstNumber = parseInt(firstNumber);
+	secondNumber = parseInt(secondNumber);
+
+var multResult = firstNumber * secondNumber;  
+
+document.getElementById("someText").innerHTML = multResult;
+
+
+}
+localStorage.setItem("firstMultInput", firstNumber);
+ var multOne = localStorage.getItem("firstMultInput")
+	console.log(multOne);
+
+	localStorage.setItem("secondMultInput", secondNumber);
+	var multTwo = localStorage.getItem("secondMultInput")
+	console.log(multTwo);
+
+}
+	
+
+
+
+
+function divide() {
+
+	var firstNumber = document.getElementById("firstNumber").value;
+	var secondNumber = document.getElementById("secondNumber").value;
+
+
+if (isNaN(firstNumber) || isNaN(secondNumber)) {
+	alert("Enter a number");
+}
+
+else{
+	firstNumber = parseInt(firstNumber);
+	secondNumber = parseInt(secondNumber);
+
+var diviResult = firstNumber / secondNumber;  
+
+document.getElementById("someText").innerHTML = diviResult;
+
+}
+
+localStorage.setItem("firstDiviInput", firstNumber);
+ var diviOne = localStorage.getItem("firstDiviInput")
+	console.log(diviOne);
+
+	localStorage.setItem("secondDiviInput", secondNumber);
+	var diviTwo = localStorage.getItem("secondDiviInput")
+	console.log(diviTwo);
+}
+
+
+
+
+
+function subtract() {
+
+	var firstNumber = document.getElementById("firstNumber").value;
+	var secondNumber = document.getElementById("secondNumber").value;
+
+
+if (isNaN(firstNumber) || isNaN(secondNumber)) {
+	alert("Enter a number");
+}
+
+else{
+	firstNumber = parseInt(firstNumber);
+	secondNumber = parseInt(secondNumber);
+
+	var subResult = firstNumber - secondNumber;  
+
+document.getElementById("someText").innerHTML = subResult;
+
+}
+
+
+
+ localStorage.setItem("firstSubInput", firstNumber);
+ var subOne = localStorage.getItem("firstSubInput")
+	console.log(subOne);
+
+	localStorage.setItem("secondSubInput", secondNumber);
+	var subTwo = localStorage.getItem("secondSubInput")
+	console.log(subTwo);
+
+}
+
+
+    </script>
+
+</body>
+
+
+</html>
