@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Title</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+/*
+
+1. Which of the following is false about a binary search tree?
+
+a) The left child is always lesser than its parent
+
+b) The right child is always greater than its parent
+
+c) The left and right sub-trees should also be binary search trees
+
+d) In order sequence gives decreasing order of elements
+
+
+Ans- In order sequence gives decreasing order of elements
+
+
+
+
+2. What is the speciality about the inorder traversal of a binary search tree?
+
+a) It traverses in a non increasing order
+
+b) It traverses in an increasing order
+
+c) It traverses in a random fashion
+
+d) It traverses based on priority of the node
+
+
+Ans-It traverses in an increasing order
+
+
+
+
+3. What are the worst case and average case complexities of a binary search tree?
+
+a) O(n), O(n)
+
+b) O(logn), O(logn)
+
+c) O(logn), O(n)
+
+d) O(n), O(logn)
+
+
+
+Ans- On average it has O(n) and at worst O(logn) 
+Ans- D
+
+
+
+
+4. What are the conditions for an optimal binary search tree and what is its advantage?
+
+a) The tree should not be modified and you should know how often the keys are accessed, it improves the lookup cost
+
+b) You should know the frequency of access of the keys, improves the lookup time
+
+c) The tree can be modified and you should know the number of elements in the tree before hand, it improves the deletion time
+
+d) The tree should be just modified and improves the lookup time
+
+
+Ans- The tree should not be modified and you should know how often the keys are accessed, it improves the lookup cost
+
+
+
+
+5. In delete operation of BST, we need inorder successor (or predecessor) of a node when the node to be deleted has both left and right child as non-empty. Which of the following is true about inorder successor needed in delete operation?
+
+a) Inorder Successor is always a leaf node
+
+b) Inorder successor is always either a leaf node or a node with empty left child
+
+c) Inorder successor may be an ancestor of the node
+
+d) Inorder successor is always either a leaf node or a node with empty right child
+
+
+Ans- Inorder successor is always either a leaf node or a node with empty left child
+
+
+
+6. Suppose the numbers 7, 5, 1, 8, 3, 6, 0, 9, 4, 2 are inserted in that order into an initially empty binary search tree. The binary search tree uses the usual ordering on natural numbers. What is the in-order traversal sequence of the resultant tree?
+
+a) 7 5 1 0 3 2 4 6 8 9
+
+b) 0 2 4 3 1 6 5 9 8 7
+
+c) 0 1 2 3 4 5 6 7 8 9
+
+d) 9 8 6 4 2 3 0 1 5 7
+
+Ans- C  - Inorder traversal sorts elements in ascending order
+
+
+
+
+
+7. The following numbers are inserted into an empty binary search tree in the given order: 10, 1, 3, 5, 15, 12, 16. What is the height of the binary search tree (the height is the maximum distance of a leaf node from the root)? (GATE CS 2004)
+
+a) 2
+
+b) 3
+
+c) 4
+
+d) 6
+
+ Ans- 3
+
+
+
+
+ 8. The preorder traversal sequence of a binary search tree is 30, 20, 10, 15, 25, 23, 39, 35, 42. Which one of the following is the postorder traversal sequence of the same tree?
+
+a) 10, 20, 15, 23, 25, 35, 42, 39, 30
+
+b) 15, 10, 25, 23, 20, 42, 35, 39, 30
+
+c) 15, 20, 10, 23, 25, 42, 35, 39, 30
+
+d) 15, 10, 23, 25, 20, 35, 42, 39, 30
+
+
+Ans- D all numbers lesser than the root number 30 go to the left and numbers greater go to the right
+
+
+
+9. Which of the following traversals is sufficient to construct BST from given traversals 1) Inorder 2) Preorder 3) Postorder
+
+a) Any one of the given three traversals is sufficient
+
+b) Either 2 or 3 is sufficient
+
+c)  2 and 3
+
+d) 1 and 3
+
+
+Ans- Either 2 or 3 is sufficient
+
+
+
+
+10. Insert the keys 55,63,31,17,22,40 into a binary tree in that order. Arrange the keys in ascending order and console log your answer.
+
+
+*/
+
+
+class Node{
+	constructor(data){
+		this.data = data;
+		this.left = null; 
+		this.right = null;
+	}
+}
+
+// Binary Search tree class 
+class BinarySearchTree 
+{ 
+	constructor() 
+	{ 
+		// root of a binary seach tree 
+		this.root = null; 
+	} 
+
+	// helper method which creates a new node to 
+// be inserted and calls insertNode 
+insert(data) 
+{ 
+	// Creating a node and initailising 
+	// with data 
+	var newNode = new Node(data); 
+					
+	// root is null then node will 
+	// be added to the tree and made root. 
+	if(this.root === null) 
+		this.root = newNode; 
+	else
+
+		// find the correct position in the 
+		// tree and add the node 
+		this.insertNode(this.root, newNode); 
+} 
+
+// Method to insert a node in a tree 
+// it moves over the tree to find the location 
+// to insert a node with a given data 
+insertNode(node, newNode) 
+{ 
+	// if the data is less than the node 
+	// data move left of the tree 
+	if(newNode.data < node.data) 
+	{ 
+		// if left is null insert node here 
+		if(node.left === null) 
+			node.left = newNode; 
+		else
+
+			// if left is not null recurr until 
+			// null is found 
+			this.insertNode(node.left, newNode); 
+	} 
+
+	// if the data is more than the node 
+	// data move right of the tree 
+	else
+	{ 
+		// if right is null insert node here 
+		if(node.right === null) 
+			node.right = newNode; 
+		else
+
+			// if right is not null recurr until 
+			// null is found 
+			this.insertNode(node.right,newNode); 
+	} 
+} 
+
+// Performs inorder traversal of a tree 
+inorder(node) //passes node
+{ 
+	
+    if(node !== null)  //checks if node is null
+    { 
+        this.inorder(node.left); 
+        console.log(node.data); 
+        this.inorder(node.right); 
+    } 
+}  
+// returns root of the tree 
+getRootNode() 
+{ 
+	return this.root; 
+} 
+
+
+preorder(node) 
+{ 
+    if(node !== null) 
+    { 
+        console.log(node.data); 
+        this.preorder(node.left); 
+        this.preorder(node.right); 
+    } 
+} 
+
+}  
+
+ 
+
+
+var BST = new BinarySearchTree();
+
+
+//insert nodes to the BinarySearchTree
+BST.insert(55);
+BST.insert(63);
+BST.insert(31);
+BST.insert(17);
+BST.insert(22);
+BST.insert(40);
+
+
+var root = BST.getRootNode()
+BST.inorder(root);
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
