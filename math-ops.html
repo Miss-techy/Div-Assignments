@@ -86,20 +86,12 @@ document.getElementById("someText").innerHTML = result;
 
 }
 
-//set and get user input of first number
-localStorage.setItem("firstNumber", num1);
- var inputOne = localStorage.getItem("firstNumber")
-	console.log(inputOne);
+//set and get user input of first number,second number and result
 
-//set and get user input of second number
-	localStorage.setItem("secondNumber", num2);
-	var inputTwo = localStorage.getItem("secondNumber")
-	console.log(inputTwo);
-
-//set and get user input of result
-localStorage.setItem("result", result)
-var getResult = localStorage.getItem("result")
-console.log(getResult);
+var userInput = {firstNumber:num1, secondNumber:num2, Result: result};
+localStorage.setItem('userInput', userInput);
+localStorage.getItem('userInput');
+console.log(userInput);
 
 }
 
