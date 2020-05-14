@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doc</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<p id="demo"></p>
+
+<script> 
+
+
+//create an array of courses
+var course = ["French", "Italian", "Math", "Spanish", "Twi", "Science", "CSS"];
+
+//create a variable text and assign it to ""
+var text = "";
+
+//declare a variable
+var i;
+
+//create a loop and start the index at 3
+for (i = 3; i < course.length; i++) {
+
+//add the varibale text to the elements in the loop and include the br tag
+  text = text + course[i] + "<br>";
+}
+
+//output the result with the p tag
+document.getElementById("demo").innerHTML = text;
+
+
+</script>
+
+
+</body>
+</html>

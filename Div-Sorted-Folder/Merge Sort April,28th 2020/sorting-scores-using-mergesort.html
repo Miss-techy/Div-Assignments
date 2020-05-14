@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+<script>
+	
+
+//Assignment
+
+//create merge function
+function merge(left, right) {
+	let arr = [];
+
+
+while(left.length && right.length) {
+	if (left[0] < right[0]){ 
+		arr.push(left.shift()); 
+	}
+	else{
+		arr.push(right.shift()); 
+	}
+}
+return arr.concat(left.slice().concat(right.slice()));
+}
+
+//create the mergeSort function
+
+function mergeSort(arr) {  ///step 1 divide
+	if(arr.length < 2){   //checking if the element is less than 2
+		return arr;   
+	}
+	const middle = Math.floor(arr.length / 2);  //div de entire arr into two
+	const left = arr.slice(0, middle);  
+	const right = arr.slice(middle);    
+
+	return merge(mergeSort(left), mergeSort(right)); 
+}
+
+//create an empty array
+var userArr = []; 
+
+//create a prompt for user to enter number of scores
+var myInput = prompt("Enter number of scores");
+
+//if scores is less than 2
+if(myInput < 2){
+
+//alert usert
+alert("Enter more than 2 scores");
+}
+
+//else create a loop 
+else {
+
+//loop the number the user inputs
+for(var i = 1; i < myInput; i++){
+
+//create a prompt for the user to enter actual scores
+var myScores = prompt("Enter scores");
+
+//push the scores into the empty array
+userArr.push(myScores); //push the scores the user provides in the array
+			
+		}
+	}
+
+var sortedScores = mergeSort(userArr.slice());
+
+console.log(sortedScores);
+
+
+
+
+</script>
+</body>
+</html>

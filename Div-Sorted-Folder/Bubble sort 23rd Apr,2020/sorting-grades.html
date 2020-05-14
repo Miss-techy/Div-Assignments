@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<p id="someText"></p>
+
+<script>
+
+
+//create an empty array
+var userGrades = [];
+
+//declare a variable
+var element;
+
+
+//create a prompt for the user to enter a number
+var x = prompt("How many grades?");
+
+//if the number is less than 8
+if(x < 8){
+
+//alert the user
+alert("Enter 8 or more")
+}
+
+//else assign the variable to ul tag 
+	else{
+element = "<ul>";
+
+//create a loop to loop the number 
+for(i= 1; i <= x; i++){
+
+//create a prompt for the user to enter actual grades
+var inputMe = prompt("Enter grade");
+
+//add the element to the variable and opening and closing li tags
+
+element = element + ("<li>" + inputMe + "</li>")
+}
+
+//close the ul tag with the variable element
+element = element + "</ul>";
+
+//get the id of hte p tag and assign it to the element to output the result
+document.getElementById('someText').innerHTML = element;
+
+//push the grades into array
+userGrades.push(inputMe);
+userGrades.sort();
+
+
+
+//if input is greater or equal to than 81 but less than or equal to 100 output GRADE A
+if(inputMe >= 81 && inputMe <= 100)
+{ 
+document.write("GRADE A!");
+}
+
+//if input is greater or equal to than 70 but less than or equal to 80 output GRADE B
+else if(inputMe >= 70 && inputMe <= 80)
+{ 
+document.write("GRADE B!");
+}
+
+//if input is greater or equal to than 50 but less than or equal to 69 output GRADE C
+else if(inputMe >= 50 && inputMe <= 69)
+{ 
+document.write("GRADE C!");
+}
+
+//else output GRADE F
+else{ 
+document.write("GRADE F!");
+}
+
+
+}
+
+
+
+
+
+</script>
+</body>
+</html>

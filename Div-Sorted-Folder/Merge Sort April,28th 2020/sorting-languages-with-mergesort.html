@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+<script>
+
+	function merge(left, right) {
+	let arr = [];
+
+
+while(left.length && right.length) {
+	if (left[0] < right[0]){ 
+		arr.push(left.shift()); //left first for ascending order. Right first for descnding order.
+	}
+	else{
+		arr.push(right.shift()); 
+	}
+}
+return arr.concat(left.slice().concat(right.slice()));
+}
+
+function mergeSort(arr) {
+	if(arr.length < 2){
+		return arr;
+	}
+	const middle = Math.floor(arr.length / 2); 
+	const left = arr.slice(0, middle); 
+	const right = arr.slice(middle);    
+
+	return merge(mergeSort(left), mergeSort(right)); 
+}
+
+
+
+var arrayProg = ["CSS", "JS", "HTML", "C", "C#", "Python","Ruby", "Java"];
+var studentArray = [];
+var studentInp = prompt("Enter number of languages. Input must be 4 or more");
+if(studentInp < 4){
+	alert("Input more than 4 languages");
+}
+	else if(isNaN(studentInp)){
+	alert("Enter a number.");
+}
+else{
+	for(var i = 1; i <= studentInp; i++){
+		var InputLang = prompt("Enter preferred languages");
+		if(arrayProg.indexOf(InputLang) >- 1){
+			studentArray.push(InputLang);
+		}
+		else{
+			alert("Not part of the semester")
+		}
+	}
+}
+
+
+
+
+
+mergeSort(studentArray.slice());
+
+console.log(mergeSort(studentArray.slice()));
+
+</script>
+</body>
+</html>

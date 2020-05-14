@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Title</title>
+  <meta charset="utf-8"><!-- Encoding-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<script> 
+
+
+
+
+
+
+
+
+//adding the claculation of gpa
+
+
+//create an empty array to store user's input
+var grade = []; 
+
+//create a prompt for user to enter a number
+var alertMe = prompt("Enter a number");  
+
+//if the number is less than 3, alert the user  
+if (alertMe < 3){
+  alert("The number must be 3 or more")
+}
+
+// loop through the number the user enters
+for(var i =1; i <=alertMe ; i++){
+
+//create a prompt inside the loop for the user to enter actual grades
+var z = prompt("Enter new grades");  
+
+//push the grades into the empty array  
+
+//return numbers as integers
+z = parseInt(z);
+
+grade.push(z);  
+}
+
+//create a variable sum and assign it a value of 0
+var sum = 0;   
+
+//declare a variable
+var w;
+
+//create another loop to loop through the grades the user enters
+for(var w = 0; w < grade.length; w++) {
+
+//add the var sum to each element to get the total in the array
+sum = sum + grade[w]
+}
+
+//declare a variable
+var gpa;
+
+//assign the variable to the sum and divide it by 6
+gpa = sum / 6.0;    
+
+//output the total
+document.write("The total is " + sum + "<br>");
+
+//output the gpa
+document.write("The GPA is " + gpa);
+
+
+
+
+</script>
+
+
+</body>
+</html>
+

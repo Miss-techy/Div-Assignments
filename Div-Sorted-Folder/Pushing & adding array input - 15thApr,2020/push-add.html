@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Title</title>
+  <meta charset="utf-8"><!-- Encoding-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<script> 
+
+
+
+//new code
+
+//create an empty array 
+
+var myArray = []
+
+//let user enter 3 numbers
+
+var num1 = prompt("Enter first number");
+var num2 = prompt("Enter second number");
+var num3 = prompt("Enter third number");
+
+num1 = parseInt(num1);
+num2 = parseInt(num2);
+num3 = parseInt(num3);
+//push into empty array
+
+myArray.push(num1);
+myArray.push(num2);
+myArray.push(num3);
+
+// create a sum and assign it a var of 0
+var sum = 0;
+
+//create a loop to get each of the items and 
+var x;
+for(x = 0; x < myArray.length; x++){
+  //add the sum var to each element
+  sum = sum + myArray[x];
+}
+document.write(sum)
+
+
+
+</script>
+</body>
+</html>
