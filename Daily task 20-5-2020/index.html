@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doc</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+	
+
+//1.Write a JavaScript program to determine whether the year 2020 is a leap year
+
+
+//create a function and pass a parameter, input
+function calcLeap(input) {
+
+//if input is evenly divisible by 4, divisible by 100 and divisible by 400
+if ((input % 4 === 0 && input % 100 > 0) || (input % 400 === 0)) {
+
+//alert input is a leap year
+alert(input + " is a Leap Year");
+} 
+else {
+//input is not a leap year
+alert(input + " is not a Leap Year");
+}
+}
+//output the result
+console.log(calcLeap(2020));
+/////////
+
+
+//2. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched".
+
+
+function guessANum(input){
+
+
+var userInput = prompt('Hey! Guess a number from 1 - 10!');
+
+userInput = parseInt(userInput);
+
+
+if(userInput === ""){
+	alert('Enter something. It must be a number');
+}
+
+else if(isNaN(userInput)){
+	alert('Enter a number');
+}
+
+if(userInput === input){
+	alert("Good Work");
+}
+else{
+	alert("Not matched");
+	
+}
+
+}
+
+guessANum(4);
+
+
+
+//3. Write a JavaScript program to convert temperature: 44 to and from Celsius, Fahrenheit
+
+
+//create a function and pass in a parameter named celsius
+function celToFahr(celsius) 
+{
+
+//create a variable and assign it to celsius
+  var celTemp = celsius;
+
+ //create a variable and assign the formular for converting celsius to fahrenheit to it
+  var celToFahr = celTemp * 9 / 5 + 32;
+
+  //create a variable and assign the output to it
+  var result = celTemp+'\xB0C is ' + celToFahr + ' \xB0F.';
+
+  //console log the result
+    console.log(result);
+}
+
+function fahrToCel(fahrenheit) 
+{
+
+//create a variable and assign it to fahrenheit
+  var fahrTemp = fahrenheit;
+
+ //create a variable and assign the formular for converting fahrenheit to celsius to it
+  var fahrToCel = (fahrTemp - 32) * 5 / 9;
+
+ //create a variable and assign the resukt to it
+  var theResult = fahrTemp+'\xB0F is ' + fahrToCel + '\xB0C.';
+
+//output the result
+console.log(theResult);
+} 
+celToFahr(40);
+fahrToCel(40);
+
+
+
+//4. Write a JavaScript program to get the website URL (loading page)
+function getUrl() {
+alert(document.URL);
+}
+
+getUrl();
+
+
+
+//5.Write a JavaScript exercise to create a variable using a user-defined name
+
+
+//create a var and assign it a string 
+var myName = 'Kahlia';
+
+//create a var n and assign it a number 120
+var number = 3;
+
+//assign the variable to the variable n 
+this[myName] = number;
+
+//output the result
+console.log(this[myName]);
+
+
+
+</script>
+
+
+</body>
+</html>
