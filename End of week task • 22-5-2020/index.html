@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doc</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+
+
+
+
+
+
+//Implement a function to check if a linked list is a palindrome. 
+
+
+//A simple solution is to use a stack of list nodes. This mainly involves three steps.
+//Traverse the given list from head to tail and push every visited node to stack.
+//Traverse the list again. For every visited node, pop a node from stack and compare data of popped node with currently visited node.
+//If all nodes matched, then return true, else false.
+
+
+function isListPalindrome(l) {
+  let curr = l;
+  let arr = [];
+
+  if (l == null)
+      return true;
+
+  // push all elements of l into the stack.
+  // a stack in JS is an array.
+  while(curr != null){
+    arr.push(curr.value);
+
+    // move ahead:
+    curr = curr.next;
+  }
+
+  let curr2 = l;
+  let length = arr.length;
+  // Traverse the list again & check by popping from the stack:
+  while(curr2 != null){
+
+    // get the top most element on the stack:
+    let lastNum = arr.pop();
+
+    // check if the node data isn't the same as the element popped:
+    if (curr2.value != lastNum){
+      return false;
+    }
+
+    // Half way point for evens
+    if (length / 2 === arr.length) {
+      return true;
+    }
+
+    // move ahead:
+    curr2 = curr2.next;
+  }
+  return true;
+}
+console.log(isListPalindrome[0, 1, 0])
+console.log(isListPalindrome[1, 1000000000, -1000000000, -1000000000, 1000000000, 1])
+
+
+ 
+// Implement an algorithm to determine if a string has all unique characters
+ //Strings
+
+ function checkForUnique(str){
+    var len = str.length;
+    for(var i=0;i<len;i++){
+        var temp = str[i];
+        for(var x=i+1;x<= len -1; x++){
+            if (temp == str[x]){
+                return false;
+            }
+        }// end of inner loop
+         
+    }// end of outer loop                
+    return true;
+} 
+
+console.log(checkForUnique("I am a cool doll"));
+
+
+
+
+
+//5.Write code to remove duplicates from an unsorted linked list.
+
+
+function LinkedList(){
+	this.head = null;
+
+}
+
+
+LinkedList.prototype.isEmpty = function(){
+	if (this.head === null){
+		return true;
+	}
+	else{
+		return false;
+
+	}
+	}  
+var list = new LinkedList();
+list.isEmpty();
+console.log(list.isEmpty());
+
+
+
+//adding a value at the end of the list
+function LinkedList(){
+	this.head = null;
+	
+}
+
+
+
+LinkedList.prototype.append = function(val) {
+
+var newNode = {
+ data: val,
+ next:null
+}
+
+if(this.isEmpty()) {
+	this.head = newNode;
+	return;
+}
+
+var current = this.head;
+
+while (current.next !== null){
+	current = current.next
+}
+
+current.next = newNode;
+
+
+
+
+var deleteDuplicate  = function(head) {
+
+	var current = head;
+
+	//condition
+
+	while(current && current.next) {
+
+		if(current.val = current.next.val){
+			current.next = current.next.next;
+		}
+
+		else{
+			current = current.next;
+		}
+	}
+	return head;
+}
+
+console.log(deleteDuplicate(46,88,40,40,56,10,10,))
+}
+var appendList = new LinkedList();
+appendList.append(10);
+appendList.append(40);
+appendList.append(40);
+console.log(appendList);
+
+
+//stacks n queues pg96
+//linked list pg 92
+//arrays and string pg 88
+</script>
+
+
+</body>
+</html>
