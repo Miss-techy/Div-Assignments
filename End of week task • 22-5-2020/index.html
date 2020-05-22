@@ -24,7 +24,7 @@
 //Implement a function to check if a linked list is a palindrome. 
 
 
-//A simple solution is to use a stack of list nodes. This mainly involves three steps.
+// use a stack of list nodes. This mainly involves three steps.
 //Traverse the given list from head to tail and push every visited node to stack.
 //Traverse the list again. For every visited node, pop a node from stack and compare data of popped node with currently visited node.
 //If all nodes matched, then return true, else false.
@@ -178,6 +178,96 @@ appendList.append(10);
 appendList.append(40);
 appendList.append(40);
 console.log(appendList);
+
+
+
+
+ //Write a program to sort a stack such that the smallest items are on the top. You can use
+//an additional temporary stack, but you may not copy the elements into any other data structure
+//(such as an array). The stack supports the following operations: push, pop, peek, and is Empty. 
+
+
+var MyQueue = function() {
+this.first = [];
+this.last = [];
+};
+
+
+MyQueue.prototype.push = function(x) {
+let length = this.first.length;
+for (let i = 0; i < length; i++) {
+this.last.push(this.first.pop());
+}
+this.last.push(x);
+return 1
+};
+
+//Removes the element from in front of queue and returns that element.
+
+
+MyQueue.prototype.pop = function() {
+let length = this.last.length;
+for (let i = 0; i < length; i++) {
+this.first.push (this.last.pop());
+}
+
+return this.first.pop();
+};
+
+
+MyQueue.prototype.peek = function() {
+if(this.last.length > 0) {
+return this.last[0]
+}
+return this.first[this.first.length-1];
+};
+
+
+//Returns whether the queue is empty.
+
+MyQueue.prototype.empty = function() {
+if (this.first.length == 0 && this.last.length == 0) return true;
+return false;
+};
+
+
+
+// MyQueue object will be instantiated and called as such:
+var obj = new MyQueue()
+obj.push(x)
+var param_2 = obj.pop()
+var param_3 = obj.peek()
+var param_4 = obj.empty()
+
+
+
+
+ //Write a method to replace all spaces in a string with '%20'. You may assume that the string
+//has sufficient space at the end to hold the additional characters, and that you are given the "true"
+//length of the string. 
+
+
+var sentence = "This is a sentence"
+var str = "";
+
+for (var i = 0; i < sentence.length; i++){
+	if(sentence.charAt(i) == " ") {
+		str = str + "%20";
+	}
+
+	else{
+		str = str + sentence.charAt(i);
+	}
+}
+console.log(str);
+
+
+
+
+
+
+
+
 
 
 //stacks n queues pg96
