@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Doc</title>
+	<meta charset="utf-8"><!-- Encoding-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<style>
+
+</style>
+
+</head>
+
+<body>
+
+<script>
+
+//1. Write a JS program to check whether a passed string is a palindrome
+
+// A palindrome is a word that reads the same backwards as forwards
+
+	function palindrome(input){
+// Change the string into lower case and remove  all non-alphanumeric characters
+   var checkStr = input.toLowerCase().replace(/[^a-zA-Z0-9]+/g,'');
+	var count = 0;
+// Check whether the string is empty or not
+	if(checkStr === "") {
+		console.log("None");
+		return false;
+	}
+// Check if the length of the string is even or odd 
+	if ((checkStr.length) % 2 === 0) {
+		count = (checkStr.length) / 2;
+	} else {
+// If the length of the string is 1 then it becomes a palindrome
+		if (checkStr.length === 1) {
+			console.log("Entry is a palindrome.");
+			return true;
+		} else {
+// If the length of the string is odd ignore middle character
+			count = (checkStr.length - 1) / 2;
+		}
+	}
+// Loop through to check the first character to the last character and then move next
+	for (var x = 0; x < count; x++) {
+// Compare characters and drop them if they do not match 
+		if (checkStr[x] != checkStr.slice(-1-x)[0]) {
+			console.log(input + " is not a palindrome.");
+			return false;
+		}
+	}
+	console.log(input + " is a palindrome.");
+	return true;
+}
+palindrome('madam');
+palindrome('nurses run');
+palindrome('fox');
+
+
+
+
+
+//2. Write a JavaScript program that accept two integers and display the larger.
+
+var num1, num2;
+num1 = window.prompt("Input the First integer");
+num2 = window.prompt("Input the second integer");
+                                                 
+if(parseInt(num1, 10) > parseInt(num2, 10)) 
+  { 
+  console.log("The larger of "+ num1+ " and "+ num2+ " is "+ num1+ ".");
+  }   
+else
+  if(parseInt(num2, 10) > parseInt(num1, 10)) 
+  {
+  console.log("The larger of "+ num1+" and "+ num2+ " is "+ num2+ ".");
+  }                  
+else
+  {
+   console.log("The values "+ num1+ " and "+num2+ " are equal.");
+  }
+
+
+
+//3. Write a JavaScript program to check from two given integers, whether one is positive and another one is negative.
+
+
+
+function positive_negative(){
+
+//create two prompts for user input
+var x = prompt("Enter a negative or positive number");
+var y = prompt("Enter a negative or positive number");
+
+
+//if x is < than 0 and y > 0 or x > 0 and y < 0
+  if ((x < 0 && y > 0) || x > 0 && y < 0) 
+  {
+  	//return true
+    return true;
+  }
+  else 
+  {
+  	//else return false
+    return false;
+  }
+}
+//output the result
+console.log(positive_negative());
+
+
+
+
+//4. Write a JavaScript program to change the capitalization of all letters in a given string.
+
+//create a function and pass a parameter
+function capitalize(word) {
+
+//assign an empty string to a variable
+    var str = "";
+
+//loop through the characters of the word
+    for (var i = 0; i < word.length; i++) {
+
+//use the test method to check for a match in the string and if they are capitalized convert them to lower case
+ if (/[A-Z]/.test(word[i])) str = str + word[i].toLowerCase();
+
+ //else convert them to upper case
+        else str += word[i].toUpperCase();
+    }
+
+//return str
+    return str;
+}
+
+//output the results
+console.log(capitalize("cancel my plans"));
+console.log(capitalize("go grease"));
+
+
+
+
+//5. Write a JavaScript program to check whether all the digits in a given number are the same or not.
+
+
+//create a function and pass a parameter num
+function test(num) {
+
+// divide the input by 10 and get the remainder, and assign it to a variable
+  var first = num % 10;
+
+ //using a while loop
+  while (num) {
+
+ //if the two opeartions are not equal return false
+    if (num % 10 !== first) return false;
+
+ //divide the number by 10 and round down the number
+num = Math.floor(num / 10);
+  }
+
+ //else return true
+  return true
+}
+
+//output the result
+console.log(test(44444));
+console.log(test(1451));
+console.log(test(888888));
+
+
+
+
+</script>
+
+
+</body>
+</html>
