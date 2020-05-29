@@ -52,7 +52,7 @@ else{
 
  var userSignupDetails = {username: signupUser, email: signupEmail, password:signupPassword};
  localStorage.setItem('details', userSignupDetails)
- localStorage.getItem('details')
+ localStorage.getItem(details)
 console.log(details);
 
 
