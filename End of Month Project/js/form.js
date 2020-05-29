@@ -15,7 +15,6 @@ $(window).trigger("hashchange");
 
 
 
-/*
 
 function signup() {
 
@@ -58,7 +57,7 @@ console.log(details);
 
 }
 
-
+}
 
 function login(){
 
@@ -83,4 +82,3 @@ else{
 
 }
 
-*/
