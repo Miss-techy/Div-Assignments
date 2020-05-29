@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/form.css">
+	<title>user login</title>
+</head>
+<body>
+	<div class="align">
+		<img class="logo" src="img/logo.svg">
+		<div class="card">
+			<div class="head">
+				<div></div>
+				<a id="login" class="selected" href="#login">Login</a>
+				<a id="register" href="#register">Register</a>
+				<div></div>
+			</div>
+			<div class="tabs">
+				<div id="error"></div>
+				<form id="form" action="index.html" method="GET">
+					<div class="inputs">
+						<div class="input">
+							<input placeholder="Email" type="text" id= "loginEmail">
+							<img src="img/mail.svg">
+						</div>
+						<div class="input">
+							<input placeholder="Password" type="password" id="loginPassword">
+							<img src="img/pass.svg">
+						</div>
+						
+							<span style="color:white; font-size: 15px; margin-top: 20px"><a href= "#" style="color: white; text-align: center;">
+							Forgot Password?</a></span>
+						</label>
+					</div>
+					<button type= "submit" onsubmit="login()">Login</button>
+				</form>
+				<div id="error"></div>
+				<form id="form" action="index.html" method="GET">
+					<div class="inputs">
+						<div class="input">
+							<input placeholder="Email" type="text" id="signupEmail" required>
+							<img src="img/mail.svg">
+						</div>
+						<div class="input">
+							<input placeholder="Username" type="text" id="signupUser" required>
+							<img src="img/user.svg">
+						</div>
+						<div class="input">
+							<input placeholder="Password" type="password" id="signupPassword" required>
+							<img src="img/pass.svg">
+						</div>
+						<div class="input">
+							<input placeholder="Confirm Password" type="password" id="confirmPassword" required>
+							<img src="img/pass.svg">
+						</div>
+					</div>
+					<button type= "submit" onsubmit="signup()">Register</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/form.js"></script>
+
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>
