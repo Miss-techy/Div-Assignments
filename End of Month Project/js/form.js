@@ -17,7 +17,7 @@ $(window).trigger("hashchange");
 
 /*
 
-function onsubmit() {
+function signup() {
 
 var signupUser = document.getElementById("signupUser").value;
 var signupEmail = document.getElementById("signupEmail").value;
