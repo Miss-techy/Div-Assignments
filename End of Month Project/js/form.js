@@ -15,7 +15,7 @@ $(window).trigger("hashchange");
 
 
 
-
+/*
 
 function onsubmit() {
 
@@ -83,3 +83,4 @@ else{
 
 }
 
+*/
